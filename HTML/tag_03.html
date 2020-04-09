@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 2일차: 수평선,글자</title>
+</head>
+
+<body>
+	<h1 align ="center"> 글자 관련 태그 </h1>
+	<h3>  hn,p,pre  </h3>
+	
+	<hr>  <!-- HoRizon : 수평선, 경계선을 그어준다 -->
+	
+	<div align ="center">
+	<h1> Heading 1</h1>
+	<h2> Heading 2</h2>
+	<h3> Heading 3</h3>
+	<h4> Heading 4</h4>
+	<h5> Heading 5</h5>
+	<h6> Heading 6</h6>
+	<b>--------[일반 텍스트입니다 밑에는 태그 시험용입니다]--------</b> <!--  inline 일반텍스트 -->
+	</div>
+	
+	<hr/>
+	<p> 가나다라   <!--  엔터가 아무리 많아도 = space 하나로 표현한다 (공백문자 무시) -->
+	<br><b>마바사아자차</b><br>	<!--  개행은 그러면 어떻게? == 개행문자를 적어줘야함<br> -->
+	카타파하</p>
+	<p> 아아앙ㅇㅇㅇㅇ아아아아아아아아아ㅏ</p>
+	<p> P는 문단형태로 자동 개행되서 보인다 </p>
+	
+	<hr/>
+	<p> A      BCDE<br>    <!--  아무리 띄어쓰기해도 1개로 취급된다 어떻게 여러개? -->
+	F&nbsp;&nbsp;&nbsp;&nbsp;GHI<br> <!-- &nbsp; 로 1개의 띄어쓰기를 표현해준다 이건 4개있으므로 4칸의 띄어쓰기표현 -->
+	가나&emsp;&emsp;&emsp;라마바<br> <!-- 사용X -->
+	사아
+	<!-- 하지만 띄어쓰기는 <br>만 많이 사용 나머지는 CSS에서 표현 -->
+	
+	<hr/>
+	
+	<p>부끄러운 지나고 이런 릴케 애기 슬퍼하는 까닭입니다. 토끼, 다 불러 시인의 아침이 계십니다. 쓸쓸함과 자랑처럼 까닭이요, 차 않은 마디씩 위에도 봅니다. 덮어 소녀들의 것은 된 노새, 듯합니다. 
+	위에 헤는 마리아 우는 시와 겨울이 자랑처럼 풀이 봅니다. 
+	우는 봄이 무성할 까닭입니다. 하늘에는 하나에 나는 거외다. 
+	내 이 보고, 별이 아직 가득 자랑처럼 듯합니다. 하나의 별 위에 새워 마리아 불러 듯합니다.</p>
+
+	<p>이름자를 하나에 지나가는 마리아 나는 흙으로 사랑과 하나 보고, 버리었습니다. 
+	별 언덕 라이너 새워 사람들의 듯합니다. 쓸쓸함과 벌레는 지나가는 흙으로 새워 듯합니다. 비둘기, 밤을 위에도 별을 아스라히 멀리 내 별 무성할 듯합니다. 둘 이름과, 새겨지는 했던 북간도에 나는 다하지 그리고 봅니다. 
+	나는 잠, 어머니, 까닭이요, 마리아 오면 딴은 하늘에는 있습니다. 
+	이름과, 내린 아침이 나는 위에 이네들은 못 이제 밤이 까닭입니다. 
+	잠, 비둘기, 위에도 오면 된 별 토끼, 까닭이요, 언덕 봅니다. 지나고 것은 별 멀리 다 이름을 거외다. 그러나 시인의 내 이름과, 있습니다. 이름과, 다 아직 시와 당신은 흙으로 봅니다.</p>
+
+	<p>피어나듯이 나는 언덕 이름자 새겨지는 새워 청춘이 까닭입니다. 
+	않은 이름과, 슬퍼하는 봅니다. 다 아이들의 내 하나에 까닭이요, 추억과 이 소녀들의 언덕 버리었습니다. 
+	멀리 소학교 별 못 걱정도 어머니 새워 있습니다. 속의 덮어 때 계집애들의 슬퍼하는 가슴속에 별 이네들은 계십니다. 
+	무엇인지 하나에 같이 너무나 지나고 이름자 가슴속에 아직 있습니다. 
+	소녀들의 책상을 그러나 이름자를 하나에 청춘이 계집애들의 경, 봅니다. 슬퍼하는 계절이 강아지, 된 아름다운 거외다.
+	위에도 별 아무 새겨지는 별 있습니다.  </p>
+	
+	
+	<hr>
+	<h2> <b>pre 태그 텍스트 </b></h2>
+	
+	<pre> <!-- pre는 문서 그대로 보여준다 -->
+		안녕하세요 
+		ABCD    EFGHIJK
+			근데 pre서식은 바로 나타나나요?	
+	
+	</pre>
+	
+	<hr>
+	<!--  단순 텍스트는 paragraph로 출력하고  -->
+	
+	<pre> <!-- 코드나 특정한 서식은 pre로 출력한다 -->
+	import java.util.Scanner;
+	
+	public class Test{
+		public void main(String [] args){
+			Scanner sc= new Scanner(System.in);
+			
+			int num = sc.nextInt();	
+	</pre>
+	<!-- Color Scripter로 HTML코드  복사 해서 붙여넣기도 가능 -->
+	<hr/>
+	<h2><b> Color Scripter 사용해보기 </b></h2>
+	<div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#a71d5d">import</span>&nbsp;java.util.<span style="color:#066de2">Scanner</span>;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a71d5d">public</span>&nbsp;<span style="color:#a71d5d">class</span>&nbsp;Test{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a71d5d">public</span>&nbsp;<span style="color:#a71d5d">void</span>&nbsp;main(<span style="color:#066de2">String</span>&nbsp;[]&nbsp;args){</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#066de2">Scanner</span>&nbsp;sc<span style="color:#0086b3"></span><span style="color:#a71d5d">=</span>&nbsp;<span style="color:#a71d5d">new</span>&nbsp;<span style="color:#066de2">Scanner</span>(<span style="color:#066de2">System</span>.<span style="color:#066de2">in</span>);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#066de2">int</span>&nbsp;num&nbsp;<span style="color:#0086b3"></span><span style="color:#a71d5d">=</span>&nbsp;sc.nextInt();&nbsp;&nbsp;&nbsp;&nbsp;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+	
+
+</body>
+</html>
