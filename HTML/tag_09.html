@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML : 3일차 : 테이블3</title>
+
+<style type="text/css">
+table,th,td{
+border : 5px solid #CCC;
+border-collapse : collapse;
+}
+</style>
+</head>
+<body>
+<h1> 테이블 태그 </h1>
+<h3> rowspan, colspan </h3>
+<hr/>
+
+<!--  table   -->
+<!--  rowspan, colspan은 잘 사용안하게된다  -->
+<table>
+	<tr>
+		<td>1X1 셀 </td>
+		<td>1X2 셀 </td>
+		<!-- 열로 늘린다 2칸 -->
+		<!--  확장은 rowspan은 아래로만 가능 위로 안된다 -->
+		<td rowspan="2">1X3 셀 </td>
+	</tr>
+	<tr>
+		<td>2X1 셀</td>
+		<td>2X2 셀</td>
+		<!-- 1*3셀 옆의 2행에 생김 -->
+		<td>2X3 셀</td>
+	</tr>
+	
+	<tr>
+	<!--  가로로 3칸 늘려줌 -->
+		<td colspan="3"> 셀입니다</td>
+	</tr>
+	<tr>
+	 	<td> 4X1 셀</td>
+	</tr>
+
+</table>
+
+</body>
+</html>
