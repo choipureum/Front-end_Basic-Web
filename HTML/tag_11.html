@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML : 3일차 : form 2</title>
+</head>
+<body>
+<h1> form 태그</h1>
+<hr/>
+<!-- 인풋과 제출이 같은 폼에 적혀져야 전달된다 -->
+<!-- 그렇다고 폼이 1개만 있어야 되는 것은 아니다 -->
+<form action="" method="get">
+<input type="text"name="test"/>
+</form>
+
+<form action="" method="get">
+<!-- 아이디랑 입력창이랑 label로 하나로 묶어준다 -- 아이디 글자를 누르면 오른쪽 창에 커서로 자동지정 -->
+<!-- size = 숫자 그대로 글자수는 아니고 자체적으로 정해져있다, 20글자를 넣고싶으면? 계속 넣으면서 테스트해봐야함 -->
+<!--  id 속성 : HTML문서내에서 태그에 고유한 이름을 붙이는 속성 -->
+<!--  name속성 : form태그를 이용해서 서버로 전송될때 변수명으로 사용 -->
+<label>아이디 <input type="text" name="userid" id="userid"  size="10"
+placeholder="아이디를 입력하세요" value="Grape"/> <!-- 인풋 네모창에 회색글씨로 가이드 글자를 넣어줌 --></label><br>
+<!-- password타입은 입력이 안보이는 동그라미로 표현된다 -->
+
+<!-- label과 인풋값을 연결해보기  -->
+<label for="pw">패스워드</label>
+<!--  value는 넣을일이 빈칸에 거의없다 placeholder만 -->
+<input type="password" name="userpw"id="userid" placeholder ="패스워드를 입력하세요" value="Hi"/><br><br>
+<!-- global attribute  id -->
+
+<!-- 체크박스 -->
+<label for="chk">체크1 </label><!-- label을 걸면 체크1을 누르면 자동으로 체크됨 -->
+<input type="checkbox"id="chk"name="chk" value="A"/>&nbsp;&nbsp;&nbsp; | <!-- 구분 파라미터로 구분도 가능 -->
+<!-- value에 A, B를 넣어주면 쿼리 스트링에 반영된다(체크박스에는 안들어감) -->
+
+<label for="chk2">체크2 </label>
+<input type="checkbox"id="chk2"name="chk2" value="B" checked="checked"/> <!-- checked를 적어주면 기본값이 체크되어있다 -->
+<input type="checkbox"id="chk3"name="chk3" value="C"/><br>
+
+<!--  체크박스는 선택하지 않으면 아예 전달 파라미터를 생성하지 않음 -->
+<!--  value를 적용하지 않으면 선택된 체크박스는 on을 값으로 전달한다 -->
+<!--  value값이 적용되어 있으면 선택된 체크박스는 value값을 보낸다 -->
+<!--  name 속성이 같은 체크박스가 여러 개 있어도 각각의 항목으로 전달함 -->
+
+<!--  value는 넣어주는게 좋다 -->
+<label><input type="radio"name="gender" value="M"/> 남 </label>
+<label><input type="radio"name="gender" value="F"/> 여 </label>
+<label><input type="radio"name="gender" value="O"checked="checked"/> 기타 </label><br>
+<!-- 체크드를 하나 기본값으로 걸어줘도 좋다 -->
+<!--  radio는 체크박스와 비슷한 동작을 한다 -->
+<!--  value속성의 값을 넣으면 해당 값으로 전달된다 -->
+<!-- name이 같은 radio는 중복 선택이 안된다 -->
+<!-- name이 같은 radio들을 같은 라디오 그룹(radio group)이라고 한다 -->
+
+<!--  버튼 클릭시 onclick 메소드 -- 알림창 -->
+<input type="button" value="확인" onclick="alert('알림!확인됐습니다;')"/><!-- onmouseover도 잇고(마우스가 위에 올라가면) -->
+<br><br>
+
+<input type="submit" value="전송"/>
+
+</form>
+</body>
+</html>
