@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML : 3일차 :form 태그</title>
+</head>
+<body>
+<h1> form 태그</h1>
+<hr/>
+<!--  get or post -->
+<!-- action에 아무것도 안넣으면 자기 자신호출 --새로고침 -->
+<form action=""  method="get">
+<!-- <form actoin="" method="post"> -->
+이름 : <input type="text" name="name"/><br>
+나이 : <input type="text" name ="age"/><br>
+날짜 : <input type="date" name="date"/><br>
+
+<input type="submit" value="전송"/>
+
+ </form>
+ <!--  method가 get일시 제출시 주소에 쿼리스트링이 붙어진다  -->
+ <!--  post라면 제출해도 쿼리스트링에 안붙음 -->
+ <!-- http://localhost:8880/tag/tag_10.html?name=abc&age=123 -->
+</body>
+</html>
