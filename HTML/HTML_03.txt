@@ -1,0 +1,82 @@
+< 테이블 태그 >
+
+ - <table>
+ - <tr>,<th>,<td>
+		
+ - <caption>,<thead>,<tbody>,<tfoot>
+
+ - 표를 표현하는 태그
+
+ - table : 표를 만들 때 사용하는 태그, 자식태그들로 행과 열을 표현한다
+
+ - tr : Table Row, 테이블의 각 행을 표현한다
+
+ - th (Table Header) : 테이블의 제목을 나타냄(한 칸, 한 개의 열) 
+ - td (Table Data) : 테이블의 데이터를 나타낸다(한 칸, 한 개의 열)
+
+	<table>
+	<tr>
+	<th></th>
+	<th></th>
+	</tr>
+	<tr>
+	<td></td>
+	<td></td>
+	</tr>
+	...
+	</table>
+
+** thead와 tfoot에 tr이 여러개 들어가도 된다
+
+ - <thead> : Table Header : 행을 테이블 최 상단으로 고정시키는 태그	
+ - <tfoot> : Table Foot : 행을 테이블 최 하단으로 고정시키는 태그
+ - <tbody> : Table Body : 행을 thead, tfoot 사이에 위치하도록 고정시키는 태그
+
+ - <caption> : 테이블의 이름, 간단한 설명을 작성한다( 테이블 상단 바깥쪽 위치한다)
+
+
+
+
+< form 태그 >
+
+ - 클라이언트(브라우저)가 서버로 요청을 보낼 때 데이터를 포함시켜주는 태그
+
+ - 요청 데이터를 입력할 수 있게 화면을 구성해준다
+	** 요청 파라미터, 전달 파라미터 : 요청 데이터 
+
+ - action속성, method 속성을 필수로 작성해야한다 
+
+ 	<form action="" method=""></form>
+
+	action : 요청 URL을 지정한다 
+	
+	method : 요청 방식(요청 메소드)을 지정한다
+		요청 데이터 전달 방식
+		GET 
+		POST
+		  
+
+	+* HTTP 의 요청 방식(리퀘스트 메소드, Request Method) 
+
+	- HTTP Request(HTTP요청)을 서버로 보낼 때 데이터 전달하는 방식
+ 	- 요청 메세지에는 반드시 요청 방식을 지정해줘야한다	
+
+ 	- GET method(방식)
+		데이터를 쿼리스트링으로 URL마지막에 ?를 붙이고 그 뒤에 작성한다
+
+		ex) http://localhost:8088/tag/tag_10.html?id=Alice&pw=123
+		ex) http://localhost:8088/search?keyword=JAVA
+
+		** 쿼리스트링 : id=Alice&pw=123 : HTTP통신에서 
+		전달데이터의 변수와 값을 표현하는 방식
+			-> '변수명=데이터' 쌍으로 표현
+				여러개의 변수는 &로 구분한다 
+		
+ 	- POST method(방식)	
+		전달데이터를 쿼리스트링으로 요청 메세지의 BODY영역에 포함시켜 전달하는 방식
+	
+
+	**GET 메소드로 요청을 보내면 전달데이터가 URL로 보인다(검색)
+	**POST 메소드로 요청을 보내면 전달데이터가 안보인다(아이디 패스워드)
+	** 전달데이터 없이 URL요청을 보낼때 GET방식을 사용한다(
+	ex) <a href="./tag_10.html"> --> get 방식(전달데이터 필요 X)
