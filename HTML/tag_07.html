@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML : 3일차 : 테이블</title>
+
+<!-- CSS 영역 -->
+<style type="text/css">  
+/* table, th, td에게 스타일을 적용한다 */
+table, th, td{
+	/* border : 태그의 테두리 스타일 설정 
+	   두께가 1px, 실선, 회색 */
+	border: 3px solid #0000FF;
+	/* border-collapse : 테이블 테두리가 겹치는 부분에 대한 설정*/
+	/*border-collapse : separate; /*테두리를 2겹으로 분리 시킴 - 기본값*/
+	
+	/* 테두리를 한줄로 표현 */
+	border-collapse : collapse;	
+}
+</style>
+</head>
+<body>
+<h1> 테이블 태그</h1>
+<h3>tr(행), th(제목), td(인스턴스)</h3>
+<hr/>
+
+
+<!-- 테이블 -->
+	<table>
+		<tr>
+			<th>제목 1</th>
+			<th>제목 2</th>
+			<th>제목 3</th>
+		</tr>
+		<tr>
+			<td>안녕하세요</td>
+			<td>테이블입니다</td>
+			<td>표에요</td>			
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+	</table>
+	
+</body>
+</html>
