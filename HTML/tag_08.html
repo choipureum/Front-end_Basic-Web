@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML : 3일차 : 테이블2</title>
+
+<!-- CSS 영역 -->
+<style type="text/css">  
+/* table, th, td에게 스타일을 적용한다 */
+table, th, td{
+	/* border : 태그의 테두리 스타일 설정 
+	   두께가 1px, 실선, 회색 */
+	border: 3px solid #0000FF;
+	/* border-collapse : 테이블 테두리가 겹치는 부분에 대한 설정*/
+	/*border-collapse : separate; /*테두리를 2겹으로 분리 시킴 - 기본값*/
+	
+	/* 테두리를 한줄로 표현 */
+	border-collapse : collapse;	
+}
+</style>
+</head>
+<body>
+<h1> 테이블 태그</h1>
+<h3>tr(행), th(제목), td(인스턴스)</h3>
+<hr/>
+
+<!-- 테이블 -->
+<!-- 테이블 안에는 div 안들어감 -->
+<!-- 테이블 태그 안에는 반드시 td,th를 이용해서 데이터를 표현한다 -->
+<!-- td,th는 반드시 tr안에 작성한다 -->
+	<table>
+		<!--  thead 테이블의 머리글, 최상단 행으로 고정 -->
+	 	<!--  여기에 있어도 맨 위에 나옴 -->
+		 <thead>
+	 	<tr>
+	 		<th>이름</th>
+	 		<th>주소</th>
+	 		<th>전화번호</th>	 		
+	 	</tr>
+	 	</thead>
+		<!--  tfoot 맨 바닥글로 고정 -->
+	 	<tfoot>
+	 	<tr>
+	 		<td> Name </td>
+	 		<td> Adress </td>
+	 		<td> Phone </td>
+	 	</tr>
+	 	</tfoot>
+		
+		<!-- tbody 안적어도 되지만  테이블 본문 (머릿글과 바닥글 사이) -->
+		<tbody>
+	 	<tr>
+	 		<td>최푸름</td>
+	 		<td>안양시 동안구</td>
+	 		<td>010-5800-4180</td>
+	 	</tr>
+	 	<tr>
+	 		<td>최푸름</td>
+	 		<td>안양시 동안구</td>
+	 		<td>010-5800-4180</td>
+	 	</tr>
+	 	
+	 	<tr>
+	 		<td>최푸름</td>
+	 		<td>안양시 동안구</td>
+	 		<td>010-5800-4180</td>
+	 	</tr>
+	 	
+	 	<tr>
+	 		<td>최푸름</td>
+	 		<td>안양시 동안구</td>
+	 		<td>010-5800-4180</td>
+	 	</tr>
+	 	</tbody>
+	 	<caption> 전화번호부 </caption>
+	</table>
+</body>
+</html>
+
+
+
+
