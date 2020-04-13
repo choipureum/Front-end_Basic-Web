@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML: 4일차</title>
+</head>
+<body>
+
+<form action="" method="get">
+
+<!-- submit 버튼으로 생성됨 --><!--  input type="submit" 이 기본값임 -->
+<button>*제출* </button>
+
+<!--  submit이 아닌 일반 버튼으로 생성됨 (눌러도 아무일도 안일어남) -->
+<button type="button">버튼 2 </button><br><br>
+
+<!--  파일 선택창 --><!--  파일 선택할 수 있음 -->
+<input type="file" name="f"><br><br> <!--  제출하면 URL에 f=파일명이 보내짐(띄어쓰기는 +로 대체해서 표현) -->
+
+<!--  다중 파일 선택창 -->
+<input type="file" name="f_multi" multiple="multiple"/><br>
+<!--  파일 선택창은 기본적으로 1개만 가능하다 -->
+<!--  하지만 multiple 속성을 부여하면 여러 개 선택이 가능하다 -->
+
+
+<!--  새로고침없이 페이지를 초기화시켜주는 함수(요즘에는 사용 많이 안함-안하는게 좋음)-->
+<input type="reset" value="초기화"/><br>
+
+<!-- 숫자만 입력가능 --><!-- 잘안쓰고 직접 구현하는 경우가 많다 -->
+<!--  브라우저 별로 HTML5의 적용이 통일이 안되기 때문에 사용 안함 -->
+NUMBER<input type="number" name="n" min="1" max="100" step="2" value="51"/><!-- 기본값은 value로 설정 -->
+
+<!-- 내용중에 @이 있어야함 email 형태 -->
+EMAIL <input type="email" name="e">
+<br><br>
+<!-- 프로토콜과 경로 문자 확인 -->
+URL<input type="url" name="u">
+<!-- 범위값, 슬라이드바를 이용해서 값을 조절함 --><!-- 수치는 안보임 -->
+RANGE <input type="range" name="r" min="30" max="200" step="2" value="150"/><br>
+
+<!--  컬럼 Picker -->
+<!--  16진수 표현법(Hexadecimal)으로 값이 전달된다 -->
+COLOR<input type="color" name="c"/> <!--  색상 피커  -->
+DATE<input type="date" name="d"/><!--  날짜 피커( yyyy-mm-dd형식) -->
+<!-- 시간 Picker --><!-- 전송형태 : hh24:mi 형식 -->
+TIME<input type="time" name="t"/>
+<!-- -------------------------------- -->
+
+<!--  데이터 목록 생성태그 -->
+<datalist id="fruit">
+	<option value="apple">사과 </option> 
+	<option value="banana">바나나</option> 
+	<option value="cherry">체리</option> 
+</datalist>
+<!-- <datalist> 태그 단독으로는 화면에 나타나지 않음 -->
+<!-- <input>태그와 연결해서 사용한다 -->
+
+<!-- <datalist>태그의 id값을 <input>태그의 list속성으로 연결한다 -->
+<!--  for과 id가 연결되는 것 -->
+<label for="fr">과일</label>
+<input list="fruit" name="fruit" id="fr"><!-- name은 쿼리에 붙여지는 것 -->
+<!-- 목록검색, 선택창에 리스트 등등 나옴 -->
+
+</form>
+</body>
+</html>
