@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML:4일차</title>
+</head>
+<body>
+	<form action="" method="get">
+	<!-- textarea를 생성 : 정확한 글자크기 넓이 아님 (얘네가 정한 크기) -->
+	<textarea rows="10" cols="50" name="content" placeholder="내용을 입력하세요"></textarea><br>
+	
+	<!-- textarea태그는 value 속성을 사용할 수 없다(존재하지 않음 -->
+	<!-- innerHTML(여는태그와 닫는태그 사이)에 전송할 데이터가 입력된다 -->
+	<!-- innerHTML영역에 기본값을 설정할 수 있다 -->
+	<input type="submit" value="전송">
+	
+	<!-- SELECT 태그 datalist 구버전(select)를 더 많이 사용한다 -->
+	<select name="month">
+		<option value="0" selected="selected">선택</option><!-- 기본값으로 아무것도 없는 리스트를 해놓고 싶을때 -->
+		<option value="one">1개월</option>
+		<option value="two">2개월</option>
+		<option value="three" >3개월</option>
+		<!--  selected하면 기본값으로 미리 지정해줌 -->
+		
+	</select>
+	<!--  name은 select 태그에 작성 -->
+	<!--  value는 option태그에 작성 -->
+	
+	
+	
+	<!-- datalist 연습 -->
+	<datalist id="user">
+		<option value="최푸름"> choipureum</option>
+		<option value="김수현"> kimsuhyeon</option>
+		<option value="김민철"> kimmincheol</option>
+	</datalist>
+	
+	<label for="user">사용자</label>
+	<input list="user" name="user" id="user">
+	</form>
+</body>
+</html>
