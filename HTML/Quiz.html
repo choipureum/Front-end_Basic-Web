@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML퀴즈</title>
+</head>
+<body >
+
+
+<!-- 인적사항영역 -->
+
+<!-- form -->
+<form action="" method="get" >
+<FIELDSET style="border:10px solid #9FB6FF; width:330px">
+
+<LEGEND><b>인적사항</b></LEGEND>
+
+<table >
+	<tr>
+		<!--  아이디  -->
+		<td><strong><em>아이디</em></strong></td> <!-- em 기울이기,strong으로 둘다 적용가능 -->
+		<td><input type="text" name="userid" id="userid" size=20 placeholder="아이디입력하세요"/></td></tr>
+
+	<tr>
+
+		<!--  비밀번호 -->
+		<td><i><b>비밀번호</b></i></td> <!--  기울이기? -->
+		<td><input type="password" name="password" id="password" placeholder="패스워드입력하세요"/></td></tr>
+
+	<tr>
+		<!--  이메일  -->
+		<td><b>이메일</b></td>
+		<td><input type="email" name="email"></td></tr>
+
+	<tr>
+		<!--  성별  -->
+		<td><strong>성별</strong></td>
+		<td><label><input type="radio"name="gender" value="M"/> 남 </label>
+			<label><input type="radio"name="gender" value="F"/> 여 </label>
+			<label><input type="radio"name="gender" value="O" checked="checked"/> 트랜스젠더 </label></td></tr>
+	
+	<tr>
+		<!-- 결혼여부 -->
+		<td><label for="married"><b>결혼여부</b></label></td>
+		<td><input type="checkbox" name="married" id="married"></td></tr>
+
+	<tr>
+		<!-- 지역 -->
+		<datalist id="location">
+				<option value="seoul">서울</option> 
+				<option value="ggyeon_gi">경기</option> 
+				<option value="jeol_la">전라</option> 
+				<option value="ggyeong_sang">경상</option> 
+		</datalist>
+		<td><label for="location"><b>지역</b></label></td><!-- <b>도 진한 글씨 변환 -->
+		<td><input list="location" name="location" id="location"></td></tr>
+
+	<tr>
+	<!-- 하고싶은말 -->
+		<td><mark>하고싶은말</mark></td>
+		<td><textarea name="textarea" placeholder="아무말이나 입력해보세요"></textarea></td></tr>
+		<tr>
+		<td></td>
+		<td>
+		<input type="submit" value="제출"/>
+		<input type="reset" value="취소"/>
+		</td></tr>
+
+</table>
+</FIELDSET>
+</form>
+
+</body>
+</html>
