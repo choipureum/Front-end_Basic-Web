@@ -1,0 +1,77 @@
+< CSS 레이아웃, Layout >
+
+ - 화면에 표현될 요소를 배치하는 작업
+
+ - 어떤 요소를 어디에 어떻게 배치할 것인가에 대한 전략
+
+ - 태그의 모양을 설정하고 배치될 위치, 다른 요소들과의 관계 등을 지정한다
+
+ 	+ 태그의 기본적인 영역(공간)의 크기
+		
+	- width : 컨텐츠 영역의 너비
+
+	- height : 컨텐츠 영역의 높이
+
+	- padding : 내부 여백
+
+	- border : 테두리
+
+	- margin : 여백
+
+< CSS 여백 >
+
+ - 태그 요소를 감싸고 있는 투명한 공간
+
+ - padding(내부여백), margin(외부여백)으로 구성된다
+
+ - padding, margin 둘 다 top, right, bottom, left로 구성된다(따로따로 설정가능)
+
+ - 설정방법
+	margin, padding 둘 다 설정방법이 똑같다	
+	크기 단위로 설정한다
+
+	margin: all(크기값);/*상하좌우 전부 적용*/
+	ex) margin: 20px;
+	
+	margin: top&bottom / left &right; /*각각 상하, 좌우 적용*/
+	margin: top left / right bottom ; /*두개 한번에 띄어쓰기로도 가능 상, 좌우, 하 적용*/
+	margin: top right bottom left; /*네개도 가능(상 우 하 좌 순서  적용:시계방향)*/
+
+
+< CSS 테두리 >
+
+ - 태그의 컨텐츠 영역과 내부 여백을 감싸는 영역
+
+ - 테두리까지 요소의 내부로 취급한다
+
+
+
+ - 설정 방식
+
+   border: border-width , border-style , border-color;
+
+   ex)   border: 1px solid black; 
+
+
+ - border-width : 테두리 두께(이거보단 px로 많이한다)
+	주로 px단위를 이용하여 설정한다
+	thin(1px), thick(5px), medium(3px, 기본값)
+
+ - border-style : 테두리 선의 모양(스타일)
+	<!--젤많이 사용-->
+	solid: 실선
+
+	<!--가끔씀-->
+	dotted: 점
+	dashed: 점선
+	double: 두줄표현
+
+	<!-- 거의 안씀-->
+	groove: 안쪽 마루
+	ridge: 바깥쪽 마루
+	inset: 오목, 안쪽 그림자
+	outset: 볼록, 바깥쪽 그림자
+	hidden: 숨김, 없앰(디폴트)
+
+ - border-color : 테두리 색상
+	테두리 색상 지정
