@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector: 1일차</title>
+<style type="text/css">
+/*전체 선택자*/
+*{
+	/*모든 태그에 기본 설정을 넣을 때 사용하는 선택자*/
+	/*브라우저가 자동으로 넣어주는 CSS를 없앨 때 사용한다*/
+	/*해당 문서에서 사용할 기본 폰트스타일을 적용할 때도 사용한다*/
+	
+	padding:0; /*내부 여백 없애기*/
+	margin:0; /* 외부 여백 없애기*/
+}
+/*태그 선택자*/
+p{	
+	padding:10px;
+	margin:20px 10px 10px;
+	font-size:20px;
+	font-color:red;
+	
+	/*배경지정*/
+	/*색상만 지정하면 background-color가 적용된다*/
+	/*background:yellow;*/
+	/*background-color:red;*/	
+	
+	/*이미지로 배경 지정하기*/
+	/*background-image:url(../code.jpg);*/
+}
+body{
+	/*배경 이미지 지정	*/
+	background-image:url(../jin.jpg);
+	
+	/*배경 이미지의 크기 지정*/
+	background-size:200px 200px;/*cover,auto등 여러 메소드 존재: 읽어볼것*/	
+	/* 크기 단위로 지정하기- 배경이미지의 너비, 높이 값을 지정한다*/
+	/* contain : 배경이미지의 너비를 요소의 너비로 맞춤(높이는 비율로)*/
+	/*cover : 배경이미지의 높이를 요소의 높이로 맞춤(너비는 비율로)*/
+	
+	/* 배경이미지 반복 패턴*/
+	background-repeat:repeat; /*기본값 repeat : 좌우 상하 모두 반복*/
+	/* no-reapeat : 반복하지 않음*/
+	/* repeat-x : x축만 반복*/
+	/* repeat-y : y축만 반복*/
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+	<h1> 선택자</h1>
+	<hr>
+	
+	<p>p태그</p>
+	<span>span 태그</span>
+	<div> div태그
+	<p>div태그 내부의 p태그</p>
+	안녕
+	</div>
+</body>
+</html>
