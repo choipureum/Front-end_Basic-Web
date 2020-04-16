@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector: 2일차</title>
+<style type="text/css">
+
+/*class가 abc인 요소*/
+.abc{ }
+
+/*h1태그의 자손 중에서 class가 abc인 요소*/
+h1 .abc{}
+
+/*class가 abc인 h1태그 요소*/
+h1.abc{}
+
+/* id가 abc인 h1태그 요소*/
+h1#abc{}
+
+/**************************/
+/* title 속성을 가지고 있는 모든 요소 글자 빨강이*/
+[title]{ color:red;}
+/*div에서 클래스 속성을 가지고 있는 모든요소 테두리*/
+div[class]{border: 1px solid green;}
+
+/*title = greeting에서 모든 h1태그*/
+h1[title="greeting"]{border:1px solid blue;}
+
+/* title 속성의 값이 "greeting"이라는 단어를 완전히 포함하는 h1태그 요소*/
+/*이게 =보다 더 많이 쓰인다*/
+h1[title~="greeting"]{border:1px solid red;}
+
+/**************************************/
+/*적용 안댐 -abc랑 똑같은건 없다*/
+h1[class="abc"]{background: yellow;}
+/*class에 abc이름이 포함된 모든 h1태그(abc-css는 안됨(띄어쓰기로 구분한거만 가능)) */ 
+h1[class~="abc"]{background-color:gray; font-style:italic;}
+
+/******************************/]
+/*class이름이 te로 시작하는 값 -> 없다 abc test dd아님(abc부터 te로 시작해야함)*/
+/*시작하는 ^=는 그나마 좀 쓰이지만 밑에는 안쓰인다*/
+h1[class^="te"]{font-size:100px;}
+
+/*class이름이 st로 끝나는 h1 클래스 요소*//*안녕하세요 변화*/
+h1[class$="st"]{border:3px dotted orange;}
+
+/* class의 값으로 "d"를 포함하는 h1 태그 요소*//*Hello 변화*/
+h1[class*="d"]{background:tomato;}
+
+/*잘안쓴다, 같거나 abc로 시작하거나 h1태그 요소*/
+h1[class|="abc"]{font-size:75px;}
+
+/*제일 많이쓰는 경우 input 태그, type*/
+input[type="checkbox"]{}
+</style></head><body>
+	
+	<h1 class="abc test dd" title="hi">Hello</h1>
+	<h1 class="abc st">안녕하세요</h1>
+	<h1 class="abc-css" title="greeting">반가워요</h1>
+	
+	<div class>여기는 DIV!</div>
+	
+</body>
+</html>
+
+
