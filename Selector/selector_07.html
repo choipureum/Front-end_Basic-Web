@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector:2일차</title>
+<style>
+/*마우스가 올라간 div*/
+/*div에 마우스를 올리면 color가 red로 반응한다 -> 때면 다시 원상복귀*/
+/*hover는 진짜 많이 사용*/
+div:hover{ 
+	color:red;
+	border:1px solid red;
+}
+/*span영역을 클릭하면 변화가 있다 (커지면서 오렌지색)*/
+span:active{
+	color:orange;
+	font-size:30px;
+}
+/*type이 button인 input 태그를 누르면 발동 -disabled는 제외*/
+input[type="button"]:active{
+	color:red;
+}
+
+/*<a>태그의 방문 상태에 따른 선택자*/
+a:link{]
+	/* 방문 전 a링크*/
+	color:red;
+}
+a:visited{
+	/*방문 후 a링크*/
+	color:green;
+}
+/*비활성화 상태인 요소*/
+:disabled{
+	font-size:8px;
+}
+/*활성화 상태인 요소*/
+/*enabled 버튼, input text는 글자를 적으면의 글자가 기울게 나온다*/
+:enabled{
+	font-style:italic;
+}
+/*check가 된 상태, radio, checkbox의 상태에 따라 선택*/
+/*체크 칸이 커진다*/
+:checked{
+	width:50px;
+	height:50px;
+}
+:focus{
+	color:tomato;
+}
+/*자식이 없는 요소*/
+div:empty{
+	height:100px;
+	background-color:yellow;
+}	
+</style>
+
+</head>
+<body>
+	<div>
+		<span> span태그 안쪽</span>
+		span태그 바깥쪽
+		<input type="button" value="확인"/><br>
+		
+		<a href="http://www.naver.com" target="blank">네이버</a>
+		<a href="http://www.daum.net">
+		<input type="button" value="다음">
+		</a>
+		<a href="http://www.daum.net">다음</a>
+		<hr/><br>
+		
+		<label><input type="checkbox"/>확인</label>
+		<label><input type="radio"/>라디오</label>
+		<button disabled="disabled">버튼</button>
+		
+		<hr>
+		
+		<div></div>
+		
+		<hr>
+		
+		<input type="text"/>
+	</div>
+
+
+
+</body>
+</html>
+
+
