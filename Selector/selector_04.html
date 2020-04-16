@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector : 2일차</title>
+<style type="text/css">
+/*띄어쓰기 하고 안하고 차이*/
+div #myDiv{ /*띄어쓰기 안하면 : div#myDiv는 하나이다(id가 myDiv인 div선택자선택)*/
+ 	color:#666;
+}
+/*div태그의 자손(하위)인 id가 myDiv인 요소*/
+div #myDiv{
+	color:red;
+}
+/*div태그의 모든 자손 ul태그 선택*/
+div ul{ /* = #myDiv ul*/
+	border: 1px solid #808;
+}
+/*#myDiv에 속한 자손 ul 바로 밑 직계자손 하나*/
+/*우선순위가 중요하다 중복시 맨 밑에 실행된게 적용*/
+#myDiv > ul{
+	border:1px dotted tomato;
+}
+
+/* 선택자들에게는 적용 우선순위가 있다*/
+/* 자식,자손 선택자의 우선순위는 같다*/
+/* 적용 우선순위가 같은 선택자들은 나중에 작성한 코드가 반영된다 */
+
+</style>
+</head>
+<body>
+
+	<div id="myDiv">
+		<ul>
+			<li>1</li>
+			<ul>
+				<li>2</li>
+			
+			<ul>
+				<li>2-1</li>	
+				<li>2-2</li>
+			</ul>
+			</ul>
+		</ul>
+	</div>
+</body>
+</html>
