@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector:2일차</title>
+<style type="text/css">
+/* h1 의 바로 뒤에 오는 p 만 선택*/
+h1+p{
+	background:yellow;
+}
+/*선택되는 대상 없음*/
+h1 + h1{
+	background:green;
+}
+/*h1을 뒤따르는 모든 p요소들*/
+/* 중복으로 들어가지는 않는다*/
+h1~ p{
+	border:1px solid red;
+}
+/*선택되는 대상 없음*/
+h1+ .choco {
+	color:chocolate;
+}
+/*class=choco인 애들 걸림*/
+h1~.choco{
+	background:chocolate;
+}
+/*choco 다음에 오는 choco 클래스*/
+.choco + .choco{
+	color:blue;
+}
+p + p{
+	font-style:italic; /*기울임 글꼴*/
+}
+</style>
+
+
+</head>
+<body>
+
+	<p>첫번째</p>
+	<h1>두번째</h1>
+	<p>세번째</p>
+	<p class="choco">네번째</p>
+	<p class="choco">다섯번째</p>
+	<h1>여섯번째</h1>
+	<p>일곱번째</p>
+	<p>여덟번째</p>
+	
+
+</body>
+</html>
