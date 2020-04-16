@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector:2일차</title>
+<style type="text/css">
+/*<span>태그 앞쪽에 가상요소를 추가한다*/
+span::before{
+	/*가상요소에 쓰여질 내용*//*span before 보여짐*/
+	content:"span before";
+	
+	/*가상 요소에 CSS스타일 적용하기*/
+	color:orange;
+	background-color:gray;
+	/*공백허용, 줄바꿈 허용*/
+	white-space:pre;
+}
+
+/*class 선택자*/
+.test{
+	/*요소가 공백문자(띄어쓰기,개행문자)를 처리하는 방식 지정*/
+	/*white-space: no-wrap ;*/	 
+	/*no-wrap : 기본값,띄어쓰기, 개행 모두다 띄어쓰기 하나로 바꾼다(적용 X)*/
+	/*white-space:pre;*/	
+	/*pre : 공백 여러개는 적용, 줄바꿈도 적용, 자동 줄바꿈도 안됨*/
+	white-space: pre-line;
+	/*pre-line : 공백 X, 개행적용, 자동줄바꿈 적용*/
+	/*pre-wrap : 공백, 개행, 자동줄바꿈 모두 적용*/
+	
+}
+</style>
+</head>
+<body>
+
+<p>첫 번째</p>
+<span>두 번째(span)</span>
+<div class="new">세 번째</div>
+<p class="test"> 네번째(p).               
+ This is Tag.This is Tag.This is Tag.<br>
+청춘의 것은 우리 무엇을 것이다. 끓는 피가 일월과 고행을 찾아다녀도, <br>
+얼음이 관현악이며, 무엇을 바이며, 운다. 뜨거운지라, 기쁘며, 인생의 천하를 몸이 군영과 청춘에서만 아름다우냐? <br>
+풍부하게 따뜻한 인생을 얼음과 이상의 사랑의 얼음이 반짝이는 철환하였는가? 무엇을 청춘 방지하는 가치를 기관과 아름다우냐?<br>
+모래뿐일 속잎나고, 창공에 이것은 인류의 것이다.<br>
+</p>
+</body>
+</html>
