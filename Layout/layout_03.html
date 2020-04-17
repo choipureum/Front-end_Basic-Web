@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout:</title>
+
+<style type="text/css">
+	div{
+		border:1px solid black;
+		
+		/*배치 흐름 설정*/
+		float: left; 
+	}
+	/*div 첫번째 자식 div1만 걸림 */
+	div:first-child{
+		width:200px;
+		height:200px;
+	}
+</style>
+</head>
+<body>
+
+<div>DIV1 안녕하세요</div>
+<div>DIV2 안녕하세요DIV2 안녕하세요DIV2 안녕하세요</div>
+<div>DIV3 안녕하세요DIV3 안녕하세요DIV3 안녕하세요DIV3 안녕하세요DIV3 안녕하세요</div>
+
+<p>패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프ㅍ</p>
+<p>패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프패러그래프</p>
+</body>
+</html>
