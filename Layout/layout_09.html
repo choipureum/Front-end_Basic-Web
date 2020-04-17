@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout_09</title>
+<style type="text/css">
+div{
+	width:250px;
+	border:1px solid black;
+}
+span{
+	/* 테두리는 인라인에 적절하지 않다*/
+	border:1px solid red;/*이상하게 테두리됨 양쪽뚫리고 난리남*/
+	background-color:#f99;
+	width:100px;
+	height:100px;
+	
+	/*기본값이 1.35em임*/
+	/*줄사이 거리가 높아짐*/
+	line-height:5em;
+	/* 글자크기 기본값 16px */
+	font-size:16px;
+	
+	/*내부 여백*/
+	padding: 1px;
+	
+	/*좌우 외부여백 */
+	margin:30px;
+}
+
+</style>
+</head>
+<body>
+	<div>
+	<!-- 인라인 특성상 옆으로 나열하면 옆에 그대로 표시됨 span여러개는 좀 안좋다 (중간중간 조금씩) -->
+		<span>SPAN1</span>
+		<span>SPAN2</span>
+		<span>SPAN3SPAN3SPAN3SPAN3SPAN3SPAN3</span> <!-- 영어는 overflow된다 (경계선 나감) -->
+		<span>가나다라마바사아 자차카타 파하가나다라</span> <!--한글은 overflow안된다 (경계선 안나감) -->
+	</div>
+</body>
+</html>
