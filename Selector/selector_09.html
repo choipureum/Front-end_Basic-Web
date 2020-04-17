@@ -8,14 +8,35 @@
 span::before{
 	/*가상요소에 쓰여질 내용*//*span before 보여짐*/
 	content:"span before";
-	
 	/*가상 요소에 CSS스타일 적용하기*/
 	color:orange;
 	background-color:gray;
 	/*공백허용, 줄바꿈 허용*/
 	white-space:pre;
 }
+div.new::after{
+	content: "new";
+	font-size:10px;
+	background-color: #f66;
+	color:#fff;
+	padding:0 2px;
+	
+	/*경계선을 둥글둥글하게 3px두께로 */]
+	border-radius:3px;
+	
+}
 
+p::first-line{
+	color:blue;
+}
+p::first-letter{
+	color:red;
+	font-size:20px;
+}
+/*new라는 이름을 갖고있지 않은 클래스*/
+p:not(.new){
+	background-color:#eee;
+}
 /*class 선택자*/
 .test{
 	/*요소가 공백문자(띄어쓰기,개행문자)를 처리하는 방식 지정*/
