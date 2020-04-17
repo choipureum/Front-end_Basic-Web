@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector:3일차</title>
+<style type="text/css">
+	#pId{
+		/*!important  
+		최우선 순위 적용 키워드
+		속성을 우선순위와 상관없이 무조건 반영한다
+		각 CSS스타일 시트(속성설정) 마지막에 넣어서 사용
+		*/
+		color:red !important;
+	}
+	.pClass{
+		color:blue;
+	}
+</style>
+</head>
+<body>
+	<p id="pId" class="pClass" style="color:orange"> 텍스트입니다</p>
+</body>
+</html>
