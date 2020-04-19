@@ -24,7 +24,7 @@
 		띄어쓰기로 구분하여 여러 값을 부여할 수 있다
 		ex) <div class="red content extra"></div> : .red  .content  .extra  다 적용
 
-***중요!
+***중요! 
 < 선택자, Selector >
 
  - HTML 문서에서 특정 요소를 선택하는 CSS문법
