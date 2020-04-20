@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout_11 : 균등하게 위치시키기</title>
+<style type="text/css">
+#wrap{
+	width:980px;
+	margin:0 auto;
+	text-align:center;
+	margin:0 auto;
+	border:1px solid white;
+}
+#wrap>div{
+	/*개수에 따라 width의 %가 달라져야 균등하게 맞춰진다 ->자동으로 맞춰주는거 JSP로 해줘야됨*/
+	width:13%;
+	background:red;
+	display: inline-block;
+}
+#wrap div:nth-child(1){background: red;}
+#wrap div:nth-child(2){background: yellow;}
+#wrap div:nth-child(3){background: green;}
+#wrap div:nth-child(4){background: gray;}
+#wrap div:nth-child(5){background: black;}
+#wrap div:nth-child(6){background: tomato;}
+#wrap div:nth-child(7){background: purple;}
+
+#wrao::after{
+	content:"";
+	display:table;
+	clear:bott;
+}
+</style>
+</head>
+<body>
+
+
+<!-- border없이 -->
+<!--  background를 각각 -->
+
+<div id="wrap"><!-- 980px -->
+	<div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div><div>G</div>		
+</div>	
+</body>
+</html>
