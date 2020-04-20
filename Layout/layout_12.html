@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout:12:table</title>
+<style type="text/css">
+#wrap{
+	/*<table>처럼 레이아웃 설정됨*/
+	display:table;
+	
+	/* 내용물(table-cell)의 크기가 일정하도록 설정*/
+	table-layout:fixed; 
+	/*fixed : 고정값, auto는 자동계산*/	
+	margin:0 auto;
+	
+}
+#wrap>div{
+	width:150px;
+	height:150px;
+	display:table-cell;
+	
+	/*좌우정렬말고 수직정렬해보자*/
+	vertical-align:middle;
+	/*좌우 가운데 정렬*/
+	text-align:center;	
+}
+#wrap div:nth-child(1){background: red;}
+#wrap div:nth-child(2){background: yellow;}
+#wrap div:nth-child(3){background: green;}
+#wrap div:nth-child(4){background: gray;}
+#wrap div:nth-child(5){background: black;}
+#wrap div:nth-child(6){background: tomato;}
+#wrap div:nth-child(7){background: purple;}
+#wrap div:nth-child(8){background: gray;}
+#wrap div:nth-child(9){background: orange;}
+
+</style>
+</head>
+<body>
+
+
+<div id="wrap" >
+	<div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div><div>G</div><div>I</div><div>H</div>
+</div>
+
+<table border="1">
+	<tr>
+		<td> 1 </td>
+		<td> 2 </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> 4 </td>
+	</tr>
+</table>	
+	
+</body>
+</html>
+
+
+
