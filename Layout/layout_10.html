@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout_10</title>
+<style type="text/css">
+/*div의 자식 div*/
+	#wrap>div{
+	/* %를 이용하면 편리 */
+		width: 20%;
+		height: 150px;
+		border:1px solid black;
+		display: inline-block;
+		margin:0;
+		padding:10px; /*안쪽 여백 늘어남 -> 내부 커지겟죠?*/
+	}
+	#wrap{
+		/*wrap안의 컨텐츠를 중앙으로 정렬한다*/
+		/*float는 왼쪽오른쪽만 밀어준다*/
+		text-align: center; /*내부정렬*/
+		width:960px;
+		margin:0 auto; /*외부정렬*/
+		border:1px solid #ccc;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<!-- 인라인이라 div사이에 개행을하면 띄어쓰기가 들어감 -> 없애려면 붙여서 적어줘라 -->
+		<div>DIV1 DIV1</div><div>DIV2 DIV2</div><div>DIV3 DIV3</div><div>DIV1 DIV1</div><div>DIV2 DIV2</div><div>DIV3 DIV3</div>
+	</div>
+	
+</body>
+</html>
