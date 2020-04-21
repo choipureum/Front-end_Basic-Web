@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+fieldset{
+	background:#eee;
+}
+input[type="text"]::hover{
+	background: #green;
+}
+fieldset::hober{
+	background:blue;
+}
+
+</style>
+<title>Quiz</title>
+</head>
+<body>
+
+	<form action="" method="post">
+	<!-- 라벨 표현법 1 -->
+		<label for="client">고객명: </label>
+		<input type="text"  id="client" name="client"/><br><br>
+		
+		<label for="tele">전화번호: </label>
+		<input type="text"  id="tele" name="tele"/><br><br>
+		
+		<label for="mail">E-mail: </label>
+		<input type="text"  id="mail" name="mail"/><br><br>
+		
+		<!-- 피자사이즈 선택란 -->
+		
+		<FIELDSET style="border:1px solid black; width:330px">
+		<LEGEND><b>피자사이즈</b></LEGEND><br>
+		
+		<!--  라벨표현법 2 -->	
+		<input type="radio"  id="small" name="pizza" value="small"/>
+		<label id="small">Small </label><br><br>
+		
+		
+		<input type="radio"  id="medium"  name="pizza" value="medium"/>
+		<label id="medium">Medium </label><br><br>
+		
+		
+		<input type="radio"  id="Large"  name="pizza" value="Large"/>
+		<label id="Large">Large </label><br><br>		
+		</FIELDSET>
+		
+		<!-- 토핑 선택란 -->
+		<FIELDSET style="border:1px solid black; width:330px">
+		<LEGEND><b>토핑선택</b></LEGEND><br>
+		
+		<label><input type="checkbox" name="bacon" id="bacon">베이컨</label><br><br>
+		<label><input type="checkbox" name="cheeze" id="cheeze">치즈</label><br><br>
+		<label><input type="checkbox" name="onion" id="onion">양파</label><br><br>
+		<label><input type="checkbox" name="mash" id="mash">버섯</label><br><br>
+		</FIELDSET>
+		
+		<label>희망배송시간<input type="time" name="time" min="10:00" max="23:00"></label><br><br><br>
+		
+		<!-- 하고싶은 말 -->
+		하고싶은말
+		<textarea name="textarea" placeholder="아무말이나 입력해보세요" rows="20" cols="20"  ></textarea><br><br>
+
+		<!-- 일반 button은 내용을 전달하지 않지만 submit은 내용을 전달함  -->
+		<input type="submit" value="주문하기" onclick="alert('주문이 완료되었습니다!;')">
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
