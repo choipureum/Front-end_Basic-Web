@@ -3,6 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>layout_15</title>
+<style type="text/css">
+	.imgBox{
+		width:320px;
+		height:260px;
+		border:1px solid #ccc;
+		
+		text-align:center;/*내부정렬*/
+		padding:10px;
+		
+		/*상대 위치 박스로*/
+		position:relative;	
+		left:100px;
+		
+		/*요소의 그림자 설정 속성*/
+		/*Cross Browsing : 모든 브라우저에서 구현 가능하게 만든 기능 - moz와 webkit을 사용해서 다른 브라우저에서 가능*/
+	/*	-moz-box-shadow: 5px 5px 0px 0px #9df;
+		-webkit-box-shadow: 5px 5px 0px 0px #9df;*/
+		box-shadow: 5px 5px 0px 0px #9df;/*오른쪽, 아래쪽(음수면 반대방향)*/
+		/*3번째는 blur효과*/
+		/*원래 요소의 크기만큼 이상은 안커짐, 이동만 -> 4번째는 크기가 커짐*/
+		/*색상도 들어감*//*색상과 크기는 잘 안건드림*/
+		
+		/*요소의 모양 변형*/
+		transform:rotate(5deg); /*rotate: 회전*/
+		-moz-transform:rotate(5deg); 
+		-webkit-transform:rotate(5deg);
+		-o-transform:rotate(5deg); 
+		/*5degree (5도로 우측회전)*/		
+	}
+
+</style>
 </head>
 <body>
 <!--  header태그 -->
@@ -41,10 +72,17 @@
 	 <footer style="font-size:0.8em; text-align:center;">
 	 powered by Choipureum<br>
 	<b>copyright &copy; 1994-2020 Choipureum</b>
-	 	 
+		 	 
 	 </footer>
 	 
 	
 	
 </body>
 </html>
+
+
+
+
+
+
+
