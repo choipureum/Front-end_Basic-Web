@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript_01</title>
+<!-- JS영역 -->
+<!-- mime타입 type/subtype ->어떤 문서인지 알려주는 역할 css script등에서 사용한다 -->
+<!-- 안써도 동작함 -->
+<script type="text/javascript">
+	
+	//JS한줄 주석
+	//출력
+	
+	//알림창띄우기- alert()함수(잘안씀)
+	alert("Hello");//브라우저가 가진 모습의 알림창을 띄워줌
+
+	//sysout과 같은기능 문서로 적혀진다(잘안씀)
+	//<body>영역에 출력하기
+	//<body>태그내에  데이터가 포함된다
+	document.write("Hello Javascript");
+	//<h1>태그도 적용
+	document.write("<h1>태그도 적용되나?");
+	
+	//브라우저 콘솔에 출력이 된다	
+	//개발자 도구 Console에 남긴다(body에는 안남김)
+	//용도: 코드 테스트, 결과 확인, 디버깅할 때 사용(자주사용 Java의 sysout)
+	console.log("Hello JS");
+	
+	//다양한 console 함수들(level에 따라서 나눈다)
+	console.log("log입니다"); //항시 아무때나
+	console.info("info입니다"); // 정보를 알려줄때
+	console.warn("warn입니다"); // 경고!(노란색)
+	console.error("error입니다"); // 에러!(빨간색)
+	
+	
+	
+
+
+</script>
+
+
+</head>
+<body>
+<!-- 자바스크립트 먼저 실행 이후 body실행 -->
+	<h3>자바스크립트의 다양한 출력방식</h3>
+</body>
+</html>
