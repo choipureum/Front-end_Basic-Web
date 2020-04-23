@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exam3</title>
+<style type="text/css">
+/*여백 0*/
+.navi{
+	padding:0;
+	margin:0;
+	
+}
+.navi>li{
+	float:left;
+	background:red;	
+	padding:30px;
+	list-style-type:none;
+	position:relative;
+	line-height:30px;
+}
+.navi>li>a{
+	color:white;
+	text-decoration:none;
+}
+.navi>li>a:hover{
+	color:tomato;
+	transition:all 2s;
+}
+.navi>li>ul{
+	position:absolute;
+	left:0;
+	top:80px;
+		
+}
+.navi>li>ul>li{
+	list-style-type:none;
+}
+.navi>li>ul>li>a{
+	text-decoration:none;
+	display:block;
+	background:pink;
+	color:red;
+	
+	font-size:0;
+	height:0;
+	line-height:0;
+}
+/*트랜지션 메뉴 촤르륵 나타나기*/
+.navi>li:hover>ul>li>a{
+	font-size:15px;
+	height:30px;
+	line-height:30px;
+	transition: all 0.5s;	
+}
+
+.navi>li>ul>li>a:hover{
+	color:tomato;
+	background:#eee;
+}
+
+</style>
+</head>
+<body>
+
+	<h2>서브 메뉴가 펼쳐지는 네비게이션 만들기</h2>
+	<hr>
+	
+	<ul class="navi">
+		<li> <a href="#">Home</a></li>
+		<li> <a href="#">웹개발</a>
+			<ul>
+				<li> <a href="#">웹디자인</a></li>
+				<li> <a href="#">HTML5+CSS3</a></li>
+				<li> <a href="#">JQuery</a></li>
+				<li> <a href="#">웹+모바일</a></li>
+			</ul></li>
+		<li> <a href="#">게시판</a>
+			<ul>
+				<li> <a href="#">Q&A</a></li>
+				<li> <a href="#">방명록</a></li>
+			</ul>
+		</li>
+		<li> <a href="./views/test/productForm.html">상품주문서</a></li>	
+	</ul>
+
+
+<br><br><br><br><br><br><br><br>
+	<!-- 헤더 -->
+	<header>
+		<h1>HTML5 & CSS3</h1>
+	</header>
+	<hr>
+	<!-- nav -->
+	<nav>
+		<ul>
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li>JAVASCRIPT</li>
+			<li>JQUERY</li>
+			<li>HTML5 API</li>		
+		</ul>
+	</nav>
+	<hr>
+	<section>
+		<article>
+			<p>이 영역은 소제목과 내용으로 구성되는 영역입니다 </p>
+			<img src="./resources/images/flower.jpg" alt="사진 자리">
+			<p>section안에 article 안에 img태그를 사용하였습니다</p>
+		</article>
+	</section>
+	<hr>
+	<footer>
+		<p>이 문서는 HTML5를 기준으로 작성되었습니다<br>
+		이 영역은 FOOTER영역입니다</p>
+	
+	</footer>	
+</body>
+</html>
