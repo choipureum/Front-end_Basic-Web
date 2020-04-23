@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exam2</title>
+<style type="text/css">
+body{
+	font-family:sans-serif;
+}
+.wrapper{
+	width:400px;
+	background:lightgreen;
+}
+.wrapper>fieldset>legend{
+	color:gray;			
+}
+fieldset{
+	border: none;
+}
+table,tr{
+	border:3px solid white;
+	border-radius:10px;
+	border-collapse:collapse;
+	background:rgba(255,255,255,70%);
+	margin:2px 0px;
+	padding:2px 2px;
+}
+input[type=submit]{
+	width:50px;
+	height:30px;
+	background:black;
+	border-radius:10px;
+	border:none;	
+	font-color:white;
+}
+
+
+
+</style>
+</head>
+<body>
+	<div class="wrapper">
+	<!-- 로그인 정보 -->
+	<fieldset style="width:100%">
+		<legend><b>Step1: 로그인 정보</b></legend>
+		<table>
+		<tr>
+			<td><label for="ID">아이디 : </label></td>
+			<td><input type="text" id="ID"></td></tr>
+		<tr>
+			<td><label for="pw">비밀번호 : </label></td>
+			<td><input type="password" id="pw"></td></tr>
+		<tr>	
+			<td><label for="pwi">비밀번호 확인 : </label></td>
+			<td><input type="password" id="pwi"></td></tr>
+		<tr>
+			<td><label>회원등급 : </label></td>
+			<td><input type="text" id="level" value="준회원"></td></tr>		
+		</table>
+	</fieldset>
+	<br>
+	
+	<!-- 개인 정보 -->
+	<fieldset style="width:100%">
+		<legend><b>Step2 :개인 정보</b></legend>
+		<table>
+		<tr>
+			<td><label for="name">이름 : </label></td>
+			<td><input type="text" id="name" placeholder="5자미만 공백없이"></td></tr>
+		<tr>
+			<td><label for="email">메일 주소 : </label></td>
+			<td><input type="email" id="email" placeholder="abcd@domain.com"></td></tr>
+		<tr>
+			<td><label for="tele">연락처 : </label></td>
+			<td><input type="text" id="tele"></td></tr>
+		</table>
+	</fieldset>
+	<br>
+	
+	<!-- 코딩 숙련도 -->	
+	<fieldset style="width:100%">
+		<legend><b>Step3: 코딩 숙련도(상, 중, 하)</b></legend>
+		<br>
+		<label>1.  <input type="range" id="range" min="0" step="2" max="6"></label><br>
+		<br>
+	</fieldset>
+	
+	<!-- 제출 -->
+	<fieldset style="width:100%">
+		<input type="submit" value="제출" >	
+	</fieldset>
+	
+	</div>
+	
+</body>
+</html>
