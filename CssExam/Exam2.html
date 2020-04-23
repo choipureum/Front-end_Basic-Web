@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exam5</title>
+</head>
+<body>
+	<form action="testw/product" method="post">
+		<fieldset style="width:400px">
+			<legend><b>납품자정보</b></legend><br>
+			<ol>
+			<li><label>납품자 정보 : <input type="text" id="name" name="name" placeholder="name" required="" autocomplete=""></label></li><br><br>
+			<li><label>email : <input type="email" id="email" name="email" placeholder="answer@naver.com"required=""autocomplete=""></label></li><br><br>
+			<li><label>홈페이지 : <input type="url" id="hp" name="hp" placeholder="http://"required=""autocomplete=""></label></li><br><br>
+			</ol>
+		</fieldset>
+		
+		<fieldset style="width:400px">
+			<legend><b>납품 정보</b></legend><br>
+			<ul>
+			<li><label>상품명 : <input type="text" id="pname" name="pname" placeholder=""required=""autocomplete=""></label></li><br><br>
+			<li><label>납품수량 : <input type="number" id="number" name="number" placeholder="최소10"required="" autocomplete="" min=10></label></li><br><br>
+			<li><label>납품등급 : <input type="range" id="range" name="range" placeholder=""required=""autocomplete="" min=10 max=20 step=1></label></li><br><br>
+			<li><label>기타사항 :<textarea rows=3 cols=25></textarea></label></li>
+			</ul>
+		</fieldset>
+		<input type="submit" value="send message">
+	</form>
+</body>
+</html>
