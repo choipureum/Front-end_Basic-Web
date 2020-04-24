@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js_06</title>
+<script type="text/javascript">
+		
+		//NaN, Not a Number
+		// 	숫자로 사용하려는데 숫자가 아닐 때 반환하는 값
+		console.log(NaN); //숫자의 특수한 값(숫자가아님)
+		console.log(typeof(NaN));
+		console.log("-----------");
+		
+		//is를 붙이면 뒤의 데이터값이 맞냐 아니냐 boolean값 도출
+		console.log(isNaN(123)); //false;
+		console.log(isNaN("ABC")); //true;
+		//문자열이지만 숫자서식
+		console.log(isNaN("123")) //false;(변환까지 해봄)
+		console.log(inNaN("123ABC")) //true; --> 아니다 ->완벽하게 숫자여야 맞다고한다
+		
+		console.log("---------")
+		
+		//Infinity
+		//	무한대를 나타내는 키워드
+		console.log(123/0); //양의 무한대 : 출력 :Infinity
+		console.log(-123/0); //음의 무한대 : 출력 : -Infinity
+		
+		console.log(isFinite(123/0));//유한한가? -->false;
+		console.log(isFinite(123)); //true;
+		
+		var x=123;
+		if(isFinite(x)){//x가 유한한값일 때 실행	
+			}
+		
+		var y=555;
+		if(isNaN(y)){// y가 숫자일 때 실행	
+		}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
