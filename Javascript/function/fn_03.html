@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function_03</title>
+<script type="text/javascript">
+	
+	function hello(){
+		console.log("안녕하세요");
+	}
+	function thanks(){
+		console.log("감사해요");
+	}
+	hello();
+	thanks();
+//----------------------------------
+
+	//전달인자로 함수를 넣는다면
+	function action(data){
+		data();
+		return data;
+}
+//	action(123); //에러발생 data가 함수가 아니다
+	action(hello);
+	action(thanks);
+	
+	var f =action(hello);
+	
+	f(); //안녕하세요 /n 안녕하세요 (두번호출)
+	
+	action(thanks)(); //감사합니다 (두번호출한다)
+	action(action(action(action(hello)))); //안녕하세요 4번 호출
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>
