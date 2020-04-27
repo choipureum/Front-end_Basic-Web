@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js_08</title>
+<script type="text/javascript">
+
+	//변수선언
+	var data;
+	console.log(data);
+	
+	//선언하지 않은 변수
+//	console.log(ddd); //ddd is not defined -> 에러메시지 (undefined와는 다르다) 
+	
+	console.log("--------------------");
+
+	if(data==undefined){
+		console.log("data변수 초기화되지 않았습니다")
+	}
+	if(data==null){
+		console.log("data변수가 null값을 가지고 있다.")
+		console.log("참조 새당이 없다.")
+	}
+	if(!data){ //data를 false로 인식한다 -->false출력
+		console.log("data의 값이 false");
+	}
+	if(!undefined){ //data를 false로 인식한다 -->false출력
+		console.log("data의 값이 false");
+	}
+	console.log("data==false 의 결과");
+	console.log(data==false); //false ->같지않다
+	
+	console.log("----------[=== 등호 3개 연산자   ]-----------");
+	if(data === undefinde){
+		console.log("===연산, data변수가 초기화되지 않았음");
+	}
+	if(data === null){
+		console.log("===연산, data변수가 참조하고있는 대상이 없음");
+	}
+	
+	//==, 기호 두개짜리 연산 - Abstrack Equality
+	//	명세서에 정의되어 있는 순서에 따라 비교연산을 수행한다
+	// 데이터타입이 달라도 비교결과가 나온다(명세서(레퍼런스) 확인해야 함)
+	
+	
+	
+	//===, 기호 세개짜리 동등 비교연산, String equlity
+	//	데이터타입이 같은지 먼저 검사하고 데이터타입이 같아야만 비교함
+	// 	데이터타입이 다르면 무조건 false
+	
+	console.log("--------");
+	
+	console.log(!undefined); //true
+	console.log(!null); //true
+	
+	// !연산자를 사용하면 true가 반환되는 데이터
+	// false, null, undefined, NaN, 0, "" 등등
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
