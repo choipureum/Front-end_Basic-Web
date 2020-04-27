@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js_07</title>
+<script type="text/javascript">
+
+var data; // 둘다undefined 출력
+console.log(data);
+console.log(typeof(data));
+
+data="data";
+console.log(data); //data
+console.log(typeof(data));//string
+
+data=123;
+console.log(data); //123
+console.log(typeof(data)); //number
+
+data=true;
+console.log(data); //true(파란색)
+console.log(typeof(data));//boolean
+
+//Object는 키 밸류로 들어가고 키는 무조건 스트링 밸류는 상관없음
+data={"A":123,"B":"ABC"}; //{키:밸류}(Object)
+console.log(data); //위에 출력
+console.log(typeof(data)); //object
+
+data=["A",123,true];
+console.log(data);  //그대로 출력;
+console.log(typeof(data)); //Object
+
+data=NaN; //Nan
+console.log(data); //NaN
+console.log(typeof(data)); //number
+
+data=Infinity;
+console.log(data); //Infinity(파란색)
+console.log(typeof(data)); //number
+
+data=null;
+console.log(data); // null
+console.log(typeof(data)); //Object
+
+data=undefined;
+console.log(data); //undefined
+console.log(typeof(data));//undefined
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+
+
+
+
+
