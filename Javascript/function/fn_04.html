@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scope</title>
+<script type="text/javascript">
+	
+	//scope, 스코프
+	//	변수의 유효범위(Global, (Fuction, Block) ->local);
+	// 	접근가능한 범위가 어디까지인가
+	
+//	console.log(data); //존재하지도 않음 --> 에러
+
+	//호이스팅(Hoisting)  : 끌어올려쓰기(글로벌 스코프에서 지역변수는 호이스팅 안됨)
+	console.log(num); // undefined 출력	//에러나지 않음, 변수가 선언된 상태
+	//js는 스크립트가 위에서 아래로 실행하지 않기때문에	
+	
+	//------------------------------------------
+	
+	
+	//글로벌 스코프(global), 전역 스코프
+	var num=10; //전역 변수 //global variable
+	//어디서든 사용가능
+	
+	
+	//지역 스코프(local), 함수 스코프(function scope)
+	function func(){
+		console.log(num); //전역변수 출력	
+		
+		console.log(func_var); //호이스팅 //undefined 출력
+		
+		var func_var =20; //지역변수,  local Valivable
+		console.log(func_var);	//지역 변수 출력
+	}	
+	func();
+//	console.log(func_var); //에러 func()함수를 벗어나서 사용불가 
+	
+	
+	//-------------------------
+	//   {} 블록
+	{
+	//블록 지역 스코프
+		var block_var =30;
+		console.log(block_var);
+	}
+	
+	console.log(block_var); //블록지역 스코프를 벗어나도  블록은 된다
+	
+	//-------------------------------------------
+	
+	var data1 = "Alice";
+	console.log(data1); //Alice
+	
+	var data1="Bob";
+	console.log(data1); //Bob //데이터가 있어도 재 선언 가능
+	//var로 변수를 선언하면 이전에 선언되었던 이름이어도 사용할 수 있다
+	//	 에러안나고 이전에 생성된 변수를 가져와서 사용한다
+	
+	//호이스팅 (let으로 선언한것은 호이스팅 안된다) -- let변수는 초기화전에 접근불가
+	//console.log(data2); //
+	
+	
+	let data2 ="Clare";
+	console.log(data2);
+	
+//	let data2="Dave"; //let으로 선언하면 이미 data2에 데이터가 있으면 재선언 할수없는 에러발생 //
+	data2 ="Dave"; //선언 없이 데이터만 바꾸는건 가능하다
+	console.log(data2);
+	
+	
+	
+	//{}블록
+	{
+		//블록지역 스코프
+		let block_let =40;
+		console.log(block_let); //출력		
+	
+//	console.log(block_let); //출력안되게 된다 var은 출력된다 하지만 let은 안됨	
+	}
+	
+	//----------------------
+	for(var i=0;i<5;i++){
+	}
+	console.log(i); //출력된다 -> 블록 지역 스코프로 취급 //  5 출력
+
+//	for(let j=0;j<5;j++){
+//	}
+//	console.log(j); //let은 에러가 나온다(블록변수 처리 안됨)
+
+	//const : 상수 생성 키워드
+	const data3=50;; //Error 발생 : const 는 선언과 동시에 초기화가 필수
+	console.log(data3);
+	
+//	data3 =60; : 변경 불가
+
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
