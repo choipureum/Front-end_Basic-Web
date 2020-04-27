@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function_01</title>
+<script type="text/javascript">
+
+//함수(function)
+
+//함수 정의 코드
+function func(){
+	//동작 코드
+	console.log("함수입니다!");	
+}
+
+func(); //함수 호출
+
+console.log("------------");
+
+var func2;
+
+//변수에 이름없는 함수(익명함수)대입
+func2 = function(){
+	console.log("이것도 함수다!")	
+}
+func2(); //호출
+
+console.log("---------------");
+
+var func3 = func;
+var func4 = func2;
+
+//괄호는 호출한다는 의미
+func();//함수입니다
+func2();//이것도 함수입니다 출력
+func3();
+func4();
+
+//함수의 데이터타입은 function으로 표기됨
+console.log(typeof(func));
+console.log(typeof(func2));
+
+console.log("----func-----");
+console.log(func); //함수  코드가 출력된다
+console.log("----func2-----");
+console.log(func2); //함수코드출력
+
+console.log("------------");
+console.log(func());// 함수입니다! /n undefined(return값을 안주면 void로 처리, undefined로 처리된다)
+console.log(func2());// 이것도 함수다! /n undefined
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
