@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function_07</title>
+<script type="text/javascript">
+	
+	function hello(){
+		console.log("Hello");
+	}
+	hello();
+	//---------------------
+	
+	// 1000 밀리초(1초)마다 Hello 함수(반복) 호출하기 (callback)
+	var tid = setInterval(hello,1000); 
+	
+	//3초뒤에 alert 한번 발동
+	setTimeout(function(){
+		alert("Hi pureum")	
+	},3000); 
+	
+	//-------------------------
+	
+	function stop(){
+		clearInterval(tid);
+	}
+	//5초뒤에 tid타이머를 종료시킨다.
+	setTimeout(stop,5000);
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
