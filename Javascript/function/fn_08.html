@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function_08</title>
+<script type="text/javascript">
+	
+	//날짜 객체 , Date
+	var d1= new Date(); //현재시간
+	console.log(d1); //Tue Apr 28 2020 17:32:06 GMT+0900 (대한민국 표준시)
+	
+	// 하루 -> 1970년 1월 2일 00시
+	//	1d == 24h == 24*60 == 24*60*60s == 20*60*60*1000ms == 86400000ms
+	var d2= new Date(86400000);	
+	console.log(d2); //1970년 + 1d를 더해서 나온다
+	
+	//----------------------
+	
+	var d3 =new Date("2015/07/09 15:26:45");
+	console.log(d3);//Thu Jul 09 2015 15:26:45 GMT+0900 (대한민국 표준시)
+
+	var d4 = new Date(2011,4,6,9,10,11); // 년 , 월, 일, 시, 분, 초
+	//4월을 넣으면 5월이 출력 -> 기본 값이 1이다
+	console.log(d4);//Fri May 06 2011 09:10:11 GMT+0900 (대한민국 표준시)
+	
+	//---------------------------
+	
+	// Date.now() 메소드
+	//	현재시간까지 밀리초로 표현(유닉스 타임스탬프 기준)
+	console.log(Date.now()); //1588063755661 출력
+	
+	var d5 = new Date(Date.now());
+	console.log(d5); //현재 시간 출력
+	
+	//---------------------------
+	
+	// Date객체를 이용한 함수들
+	//	주로 날짜나 시간을 파싱(추출)하는 함수들이다
+	
+	var d = new Date(); //현재시간
+	console.log("---------------------");
+	
+	//년도월일
+	console.log(d.getFullYear()); //현재시간의 연도를 출력 //2020
+	console.log(d.getMonth()); //월 //-1 츨력(0부터시작)
+	console.log(d.getDate()); //일
+	console.log(d.getDay()); //요일 //2 //숫자로 표현(일요일==0. 토요일==6)
+	
+	//시분초
+	console.log(d.getHours());
+	console.log(d.getMinutes());
+	console.log(d.getSeconds());
+	console.log(d.getMilliseconds());
+	
+		
+	console.log("------------");
+	
+	//get대신 set을 사용하는 함수를 사용하면 Date객체의 날짜/시간을 변경할 수 있다
+	
+	d.setFullYear(2050);
+	d.setMonth(0);
+	d.setDate(27);
+	console.log(d); //setDay는 없다(요일은 자동 계산)
+	
+	var customDate = new Date(); //현재시간
+	
+	//임의의 시간으로 설정, 유닉스 타임스탬프 이용
+	customDate.setTime(1500000000);
+	console.log(customDate);
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
