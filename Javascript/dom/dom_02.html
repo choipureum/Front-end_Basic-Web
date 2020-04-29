@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom_02</title>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		//요소 노드 생성 - h1 요소 생성
+		var h = document.createElement("h1"); 
+		console.log(h); //<h1></h1> 출력
+		
+		// 텍스트 노드 생성 - "Hello DOM"
+		var text = document.createTextNode("Hello DOM");
+		
+		console.log(text);		
+		//--------------------------------
+		
+		//h1요소노드에 텍스트노드를 자식으로 추가하기
+		h.appendChild(text);
+		
+		//<body>태그에 h1요소 노드를 자식으로 추가하기 // 화면에 출력되서 보인다.
+		document.body.appendChild(h);
+		
+		//** document.body
+		//	<body> 요소노드
+		//	document객체에서 <body>는 특별히 키워드로 저장하고 있음
+		
+		// 되긴하지만 하면 안될 것
+		//비 표준태그도 생성하고 <body>에 추가 가능하다
+		// -> 쓸모는 없다(그냥 일반 텍스트 test출력)
+		// 	--> 변화는 없다(에러 X)
+		var abc = document.createElement("abc");
+		var t = document.createTextNode("test"); 
+		
+		abc.appendChild(t);
+		document.body.appendChild(abc);		
+		
+		//style은 똑같이 들어간다
+		abc.style.color = "red"; 
+		abc.style.border = "1px solid #ccc";
+		abc.style.backgroundColor = "green";
+		abc.style.fontSize = "30px";
+		abc.style.margin= "40px 50px";
+	};
+
+	
+	//window.onload를 두번쓰면 덮어씌워진다 -> 위에꺼 사라짐  -> 하나에 정의해야한다;
+	window.onload = function(){
+		var pTag = document.createElement("p");
+		document.body.appendChild(pTag);
+		
+		var div = document.createElement("div");
+		var t = document.createTextNode("Hello");
+		
+		div.appendChild(t);
+		document.body.appendChild(div);
+	};
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
