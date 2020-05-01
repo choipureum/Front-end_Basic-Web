@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom_08</title>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var form = document.getElementById("myForm"); //아이디 이용 선택
+		var data1 = document.getElementsByName("data1"); //name속성 이용선택
+		
+		console.log(form); //form 양식출력
+		console.log(data1); //nodelist[input]~(배열)
+		
+		//form태그의 자식요소인 input[name='data1']을 제거한다
+		form.removeChild(data1[0]); //첫번째 form태그 제거
+		
+		//-------------------------------------------
+		
+		document.getElementsByName("data2")[0].value ="test"; //value기본값을 지정해준다  //body영역에 있는거 보다 이후에 실행 ->기본값보다 test가 남는다
+		
+//		input[name="data2"]요소에 적혀있는 ㄱ밧이  ""이 아닐때
+		if(document.getElementsByName("data2")[0].value!=""){
+			
+			//자바스크립트 코드를 이용한 form제출(submit)
+			form.submit();
+		}else{//아무것도 작성하지 않았을 때 
+			alert("data2를 채우세요!"); //form검증 ->validation			
+		}
+		//radio애들 배열로 담기
+		var r= document.getElementsByName("r");
+		console.log(r);
+		
+		//선택된 항목으로 지정하기- setAttribute 
+		r[1].setAttribute("checked","checked"); //r radio 1번위치의 (2) 가 checked됨
+		
+		//---------------------------------
+		//checkbox 배열로 넣어주기
+		var c = document.getElementsByName("c");
+		console.log(c);
+		c[0].setAttribute("checked","checked"); //0번에 체크됨
+		
+		
+		// 항목이 많다면 모두 설정해주기 어렵다 -> 반복문을 사용
+		for(var i=0;i<3;i++){
+			c[i].setAttribute("checked","checked");			
+		}
+	}
+
+
+</script>
+</head>
+<body>
+	<h1 id="test">form 테스트</h1>
+	<hr/>
+	
+	<form action="#" method="get" id="myForm">
+		<input type="text" name ="data1"/><br>
+		<input type="text" name ="data2" value="기본값"/><br><br>
+		
+		<input type="radio" name="r" value ="A"/>
+		<input type="radio" name="r" value ="B"/>
+		<input type="radio" name="r" value ="C"/><br><br>
+		
+		<input type="checkbox" name="c" value ="E"/>
+		<input type="checkbox" name="c" value ="F"/>
+		<input type="checkbox" name="c" value ="G"/>
+
+	</form>
+</body>
+</html>
