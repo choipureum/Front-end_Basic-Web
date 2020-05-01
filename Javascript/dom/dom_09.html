@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom_09</title>
+<script type="text/javascript">
+	
+	window.onload=function(){
+		//태그의 id는 window객체의 property(속성)들로 등록된다
+		console.log(window.test);//#test	 //document.getElementById("id")를 대신해서 사용할 수 있으며  window에서 처리가능
+		console.log(window.myForm); //form #myForm
+		
+		window.test.style.color ="red"; 
+		
+		//window객체의 property를 사용할때 window. 은 생략가능하다고 했다
+		test.style.background ="yellow";
+		
+		//-------------------------------
+		// <form>태그의 자식요소들의 name 값들은 해당 <form>객체의 property로 등록된다
+		//id가 myForm인 <form>태그의 자식요소 중 name이 data1인 요소
+		console.log(myForm.data1); //data1 코드 출력
+		//form# myForm[name="data1"]
+		myForm.data1.value="TEST";
+		
+		//-------------------------------
+		// <form>태그의 name은 document객체의 property로 등록된다
+		// input태그의 name아님, form태그 자신의 name이 등록됨
+		
+		console.log(document.myFormName); //myFormName가져옴
+		
+		var f = myForm;
+		console.log(f.data1); //form #myForm> input[name="data1"]
+		
+		console.log(f.c); //myform -form  , c - checkbox //2개일때 배열로 2개 얻어옴
+		//[name="c"]인 요소는 2개여서 배열로 반환
+		
+		//true -체크상태
+		//false -체크 해제된 상태
+		console.log(f.c[0].checked); //false 출력 -체크 안되있다
+		console.log(f.c[1].checked); //false 출력 -체크 안되있다
+		
+		//이용약관, 수집동의 둘다 체크 된상태
+		if(f.c[0].checked && f.c[1].checked){
+			f.submit();
+		}else{
+			//둘중에 하나라도 체크가 안된 상태
+			alert("이용약관&개인정보 수집 동의에 체크하세요");
+		}
+		
+		//비활성화 상태 확인(disabled)
+		console.log(f.b.disabled)//true -disabled가 되어있으며 true출력
+		
+		//속성의 값 상관없이 속성의 존재 유무로만 판단하는 속성들
+		//	disabled, checked, selected, readonly
+		
+		console.log("-----------------------");
+		
+		// <select>의 value값은 자식요소인 <option>태그의 value를 활용한다.
+		console.log(f.s.value); //two 출력  -기본값이 2이므로 two출력
+	}
+
+
+</script>
+</head>
+<body>
+	<h1 id="test">테스트 폼</h1>
+	<hr>
+	
+	<form id="myForm" name="myFormName" action="#" method="get">
+		<input type="text" name="data1"><br>
+		<input type="text" name="data2" value="기본값"><br><br>
+		
+		<input type="checkbox" name="c" value="c1" checked>이용약관<br>
+		<input type="checkbox" name="c" value="c2">개인정보 수집 동의<br>
+		
+		<br>
+		<input type="button" name="b" disabled="disabled" value="확인">
+		<br><br>
+		
+		<select name="s">
+			<option value="one">1 </option>
+			<option value="two" selected>2 </option>	
+		</select>
+	</form>
+</body>
+</html>
