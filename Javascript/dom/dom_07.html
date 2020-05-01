@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom_07</title>
+<script type="text/javascript">
+
+	window.onload = function(){
+		//HTMLCollection으로 선언된다
+		//h3태그요소들을 DOM객체로 반환하기(배열)
+		var h3 = document.getElementsByTagName("h3");
+		console.log(h3);
+		
+		//위에 배열로 선언한 아이들 치환해주기 -> 바뀌어서 화면에 나타난다
+		//처음에는 원래의 문자로 보였다가 빠르게 바뀐다 (onload특성으로)
+		h3[0].innerHTML ="HI";
+		h3[1].innerHTML = "HTML";
+		h3[2].innerHTML ="최푸름추에푸르음"
+		h3[2].style.color ="blue"; 
+		
+		//------------------------
+		var h1 = document.getElementsByTagName("h1");
+		console.log(h1);
+		
+//		h1.innerHTML ="아아아아여기는 제목"; //동작하지 않는코드
+		//배열이므로 배열이름(변수)에 직접 DOM API함수나 property를 사용하면 안된다		
+		h1[0].innerHTML ="아아아아여기는 제목"; //동작(배열 1개여도 인덱스 지정해야함)
+		
+		document.getElementsByTagName("h1")[0].style.color ="red"; //동작 -> 스타일 변환 곧바로 가능(그래도 var로 변수 지정하고 쓰는편이 좋다)
+		
+		//매번 DOM API를 호출하도록 코드를 작성하는 것은 비효율적
+		// DOM API 호출 결과를 변수에 저장하고 사용할 것
+		
+		//객체 제거
+		h3[2].remove(); // -->사라짐
+		console.log(h3[2]);
+		
+		//<body>의 자식 중 h3[1]요소를 제거
+		document.body.removeChild(h3[1]);
+		
+		//객체 제거
+		h3[0].remove(); 
+		
+		//remove()로 제거한 객체 얻어오기
+		var test = document.getElementById("test");
+		console.log(test); //null출력 -> dom트리에서 remove로 제거해서 없어졋다(따로 보관 X)
+			
+	}
+
+
+</script>
+</head>
+<body>
+	<h1>여기는 제목입니다</h1>
+	<hr>
+	
+	<h3 id="test">Javascript</h3>
+	<h3>DOM</h3>
+	<h3>getElementsByTagName</h3>
+	
+</body>
+</html>
