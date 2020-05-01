@@ -67,6 +67,10 @@
 
 **둘 다 화면에서 제거도니다
 
+< DOM API사용을 줄일 수 있는 특수 규칙 >
 
+ 1. 모든 태그들의 id는 window객체에 property로 등록된다
+ 2. <form>태그의 자식요소들의 name은 해당 <form>객체의 property로 등록된다
+ 3. <form>태그의 name은 document객체의 property
  
  
