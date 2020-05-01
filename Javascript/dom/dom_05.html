@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom_05</title>
+<script type="text/javascript">
+
+
+window.onload = function() {
+   
+   
+   // <body>태그의 DOM 객체
+   console.log( document.body );
+   
+   // <body>태그의 내용물(컨텐츠) 출력
+   console.log( document.body.innerHTML )
+   
+   // 내용물을 전체 치환한다
+   // document.body.innerHTML = "<div><h1>INNER HTML</h1></div>";
+   
+   // 기존의 내용물에 추가한다
+   document.body.innerHTML += "<div><h1>INNER HTML</h1></div>";
+   
+   //---------------------------------------------------------
+   
+   var content = document.getElementById("content");
+   
+   content.innerHTML = "<h3>innerHTML</h3>"; //내용물 전체 치환
+   content.innerHTML += "<p>테스트</p>"; //내용물 추가
+   content.innerHTML += "<hr>"; // 내용물 추가
+   
+   //---------------------------------------------------------
+   
+   var h = "";
+   //var에도  +=해서 html태그를 더해줄수있다
+   h += "<h3>테스트</h3>";
+   h += "<p>하나</p>";
+   h += "<p>둘</p>";
+   h += "<p>셋</p>";
+   console.log(h);
+   
+   // 준비해놓은 String을 한번에 집어넣기
+   content.innerHTML = h;
+   
+   //---------------------------------------------------------
+   
+   console.log("--- innerHTML ---")
+   console.log(content.innerHTML)
+   
+   console.log("--- innerText ---")
+   console.log(content.innerText)
+   
+   //---------------------------------------------------------
+   
+   content.innerText = "<h1>하용</h1>"
+   
+};
+</script>
+</head>
+<body>
+<div id="content">CONTENT</div>
+
+</body>
+</html>
