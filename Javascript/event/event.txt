@@ -1,0 +1,126 @@
+< JS 이벤트, JS Event >
+
+ - 사용자의 모든 입력(행위)들을 프로그램에서 미리 정의해놓은 객체
+
+ - 사용자의 입력(동작) 뿐만 아니라 특정 사건도 포함한다
+
+ - 컴퓨터(운영체제)에서 발생한 이벤트를 감지하고 해당 이벤트를 이벤트가 발생한 응용프로그램에게 전달한다
+
+ - 전달된 이벤트는 해당 응용프로그램에서 적절한 처리를 수행한다
+
+ 
+< JS 기본 이벤트 >
+
+ - 태그 요소에 별도로 이벤트 처리코드를 연결하지 않아도 기본적으로 실행되는 이벤트들
+
+ - <a>요소 클릭 
+	지정된 경로로 페이지 이동(location.href ="지정경로") 와 같은역할
+
+ - 브라우저 화면에 마우스 우클릭
+	메뉴 보여주기
+
+ - <form>태그에서 submit 버튼 클릭
+	action에 지정된 경로로 데이터를 전달하며 페이지 이동 발생
+	( <form>객체.submit() )
+ 
+< JS 주요 이벤트 >
+
+ ------- 마우스관련 이벤트 -------
+ - click : 마우스를 클릭했을 때 
+ - onclick : 마우스를 더블 클릭했을 때
+
+ - mousedown : 마우스 버튼을 눌렀을 때 //거의 사용 없음
+ - mouseup : 마우스 버튼을 뗏을 때
+ - mousemove : 마우스 포인터를 이동했을 때
+ - mouseenter : 마우스 포인터가 요소 위로 올라갔을 때
+ - mouseleave : 마우스 포인터가 요소 밖으로 나갔을 때
+ 	(mouseover , mouseout : (같지만)자식요소까지 판단) 
+ 
+
+ ------- 키보드관련 이벤트 -------
+ - keydown :  키보드를 눌렀을 때(한번)
+ - keyup :  키보드에서 손을 뗏을 때
+ - keypress : 키보드를 눌렀을 때(연속적으로 눌럿을때)	
+	
+	** 이벤트 발생 순서
+	1.keydown
+	2.keypress
+	3.keyup
+
+	** keypress는 alt, ctrl, shift, esc같은 가상키에 반응안함
+	** keydown은 모든 키에 반응함
+
+ ------- 폼(<form>)관련 이벤트 -------
+ - submit : 폼이 제출되었을 때(제출버튼을 눌렀을 때)
+ - result : 폼이 초기화되었을 때(초기화버튼을 눌렀을 때)
+ 
+ - focus : 특정 요소에 입력 포커스가 들어갔을 때 
+ - blur : 포커스를 잃었을 때
+
+ - change : 폼필드(폼의 자식요소)에 변화가 발생했을 때
+ - select : <select>태그의 항목을 선택했을 때 
+
+ ------- 윈도우(창)관련 이벤트 -------
+ - load : HTML문서 또는 요소가 불러와졌을 때(메모리에 로드됬을 때)
+ - resize : 요소 크기(윈도우 크기)가 변경되었을 때
+ - scroll : 페이지 스크롤이 이동되었을 때
+ 
+
+< JS 이벤트 처리코드 작성(등록)하는 방법 >
+
+ - 이벤트가 발생하면 해당 이벤트에 알맞은 동작을 수행할 수 있도록 코드를 작성해둬야한다
+ 
+ - 이벤트 처리코드 == 이벤트 핸들러(Handler) == 이벤트 리스너(listenr)
+
+ - 이벤트가 발생했을 때 그 상황에 맞춰 동작할 코드
+
+ 	1. HTML태그의 이벤트 속성을 이용한 인라인방식으로 등록하기 - 해당 HTML에서 바로 처리하는방법
+		ex) <button onclick="alert('clicked')">확인</button>
+
+		ex) <div onmousemove ="console.log('moved')">하하하</div>
+
+	2. DOM을 이용한 이벤트 리스터 바인딩 - 1 (Event Attribute 사용)
+		
+		ex) <button id="btnOk"> 확인 </button>
+
+		    <script>
+			...생략
+			btnOk.onclick = function(){
+				alert("확인!");  
+			}
+
+			btn.onmousemove =fn();
+
+			function fn(){
+				console.log("마우스 움직임!");
+			}
+				
+			...생략
+		    </script>		
+
+
+	3. DOM을 이용한 이벤트 리스너 바인딩 - 2 (Event API 함수 사용)
+		
+		이벤트발생객체.addEventListener("이벤트이름",콜백함수)
+		
+		ex)  btnTest.addEventListener("click", function(){
+			alert("테스트");
+			});	
+	
+		이벤트발생객체.removeEventListener("이벤트이름",콜백함수)
+
+		** removeEventListener의 두번째 인자로 전달되는 콜백함수는 addEventListener에서 사용한 함수와
+			같아야하므로 함수를 전역함수로 정의해놓는 것이 좋다
+
+
+
+
+
+
+
+
+
+
+
+
+
