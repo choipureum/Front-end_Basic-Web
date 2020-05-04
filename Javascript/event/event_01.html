@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event_01</title>
+<script type="text/javascript">
+	
+	//div3에서 동작하는 func()함수 구현
+	function func(){
+		var data=10;
+		var result = data+100;
+		
+		console.log("---연산결과는?----");
+		console.log(result);
+		
+		alert("이벤트 속성의 값으로 작성할 코드가\n"+"너무 길어지면 함수를 따로 만들어서\n"+"호출해주세요!");
+	}
+	
+	
+</script>
+</head>
+<body>
+	<!-- div요소에서 click 이벤트가 발생하면 실행될 스크립트 코드를 onclick속성의 값으로 작성한다 -->
+	<div onclick="alert('clicked');">하하하</div><!-- 동작메소드 안에 ""안에는 script코드가 들어가야한다 -->
+	<!-- 클릭하면 110 콘솔에 출력+ alert 함수 발생  -->
+	<div id ="div3" onmousemove="console.log('Hi')" onclick="func();">호호호</div> 
+
+</body>
+</html>
