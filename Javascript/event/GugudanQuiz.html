@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>quiz</title>
+<style type="text/css">
+
+not(h1){
+	font-family:sans-serif;
+	font-size:15px;
+}
+input[type="text"]{
+	width:100px;
+	height:20px;
+	border: 1px solid black;
+	background: #eee;
+	color:blue;
+}
+button{
+	width:100px;
+	height:30px;
+	margin:10px 30px;
+	background: #eee;
+	color:red;
+}
+</style>
+<script type="text/javascript">
+
+//숫자 랜덤 난수 생성, 새로 세팅하기
+function setting(){
+	var leftinput = Math.floor(Math.random()*9)+2;
+	left.value = leftinput;
+	var rightinput= Math.floor(Math.random()*9)+1;
+	right.value = rightinput;
+	collect.value="";
+}
+
+//클릭할때 발생하는 메소드
+function myClick() {
+	var leftinput = left.value;
+	var rightinput = right.value;
+	var inputresult = collect.value;	
+	var temp = leftinput*rightinput;
+	if(temp==inputresult){
+		alert("정답입니다");
+		collectKan.value = parseInt(collectKan.value)+1;		
+	}
+	else{
+		alert("오답! 정답은 "+temp+"입니다");
+		wrongKan.value = parseInt(wrongKan.value)+1;	
+	}
+	setting();	
+}
+</script>
+</head>
+<body>
+<h1>구구단 퀴즈</h1>
+<hr/>
+	
+	<input type="text" size="2"id="left" readonly="readonly">X<input type="text" size="2"id="right"readonly="readonly"/> <br><br>
+	<input type="text" size="2"id="collect"/>&nbsp; <button onclick="myClick()">결과 확인</button><br><br>
+
+<script type="text/javascript">
+	//처음 세팅호출
+	setting();
+</script>
+정답수 : <input type="text" id="collectKan" readonly="readonly" value="0"><br>
+오답수 : <input type="text" id="wrongKan" readonly="readonly" value="0">
+</body>
+</html>
