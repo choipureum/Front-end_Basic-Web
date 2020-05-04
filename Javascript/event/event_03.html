@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event_03</title>
+<script type="text/javascript">
+	
+	window.onload = function(){		
+		//이벤트리스너 등록 : addEventListener
+		//이벤트리스너 해제 : removeEventListener
+		
+		//------익명함수로 같은 코드를 가지고 있어도 같은 함수가 아니다 --------------
+		// removeEventListener 동작하지 않는다
+		//	-> 함수를 따로 정의해서 사용해야한다
+// 		btnOk.addEventListener("click",function(){
+// 			alert(" 확인버튼 클릭됨 ")
+// 		});	
+		
+// 		btnOk.removeEventListener("click",function(){
+// 			alert(" 확인버튼 클릭됨 ")
+// 		});
+		
+		//해결법 : 따로 정의한 함수를 이용한 리스너 등록
+				
+// 		btnOk.addEventListener("click",clicked);
+		
+		
+		
+// 		//테스트버튼을 클릭하면 확인버튼 이벤트가 해제된다		
+// 		btnTest.onclick = function(){
+// 			btnOk.removeEventListener("click",clicked);		
+// 		}
+// 		//같은 의미
+// 		btnTest.addEventListener("click",function(){
+// 			btnOk.removeEventListener("click",clicked);
+// 		})
+		
+		//전역함수 작성해서 등록할 것
+		//btnTest 객체에 마우스가 올라가면 글자색을 빨강으로 
+		//btnTest 객체에 마우스가 내려가면 글자색을 검정으로 
+		
+		//mouseenter, mouseover
+		btnTest.addEventListener("mouseover",fontCorRed);	
+		//mouseLeave, mouseout
+		btnTest.addEventListener("mouseout",fontCorBlack);			
+	};
+	
+	//함수를 전역함수로 정의해본다
+	function clicked(){
+		alert("확인버튼 클릭!!!");
+	}
+	
+	//#btnTest 글자색을 빨강색으로 
+	function fontCorRed(){
+		btnTest.style.color = "red";
+	}
+	//#btnTest 글자색을 검정색으로 
+	function fontCorBlack(){
+		btnTest.style.color = "black";
+	}
+	
+
+</script>
+</head>
+<body>
+	<button id="btnOk">확인 버튼</button>
+	<button id="btnTest">테스트 버튼</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
