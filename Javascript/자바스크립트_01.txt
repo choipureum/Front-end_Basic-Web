@@ -1,4 +1,4 @@
-< 자바스크립트, Javascript >
+< 자바스크립트, Javascript > 
 
  - HTML문서에서 동작을 제어하는 언어
 
