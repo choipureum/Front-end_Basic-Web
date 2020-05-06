@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event_04</title>
+<script type="text/javascript">
+
+	//alert함수 (확인만 누르고 undefined 반환)
+	function showAlert(){
+		console.log("alert");
+		var res =alert("메시지만 출력되는 알림창");
+		console.log(res); //알림뜨면서 undefined 콘솔로그(반환값없음)
+	}
+	
+	//confirm 함수  (확인, 취소를 통해 boolean값 반환)
+	function showConfirm(){
+		console.log("--- confirm ---");
+		var res = confirm("찬성이면 확인, 반대면 취소를 누르세요");
+		console.log(res); //확인 누르면 true반환, 취소면 false 반환한다	
+		
+		if(res){
+			document.getElementsByTagName("li")[1].style.color = "blue";
+		}
+		else{
+			document.getElementsByTagName("li")[1].style.color = "red";
+		}
+	}
+	//prompt 함수 (메세지를 보내서 받아올수잇다)//아무것도 입력안하면 null
+	function showPrompt(){
+		console.log("--- prompt ---");
+		var res = prompt("상세한 이유를 작성하세요");
+		console.log(res); //위에서 작성한 값을 console에 출력
+		
+		//반환타입 String
+		//	확인버튼 클릭(엔터키입력) - 텍스트필드에 작성한 내용 반환
+		// 	취소버튼 클릭(esc키 입력) - null반환
+		
+		// **아무것도 작성하지 않고 확인버튼 누르면 ""이 반환댄다
+		
+		if(res ==null){
+			console.log("취소 선택");
+		}else if(res==""){
+			console.log("입력값 없음");
+		}else{
+			console.log("입력값>>");
+			console.log(res);
+		}
+	}
+
+
+</script>
+</head>
+<body>
+	<h1>자바스크립트에서 제공하는 기본 대화상자</h1>
+	<h3>Interaction, 대화상자(상호작용박스)</h3>
+	
+	<h3>alert, confirm, prompt</h3>
+	<hr>
+	
+	<ol>
+		<li>확인 버튼과 메세지를 출력하는 alert창
+			<input type="button" onclick="showAlert()" value="확인"/>
+		</li>
+		<li>
+			확인, 취소버튼과 메시지를 출력하는 confirm창
+			<input type="button" onclick="showConfirm()" value="확인"/>
+		</li>
+		<li>
+			메시지, 텍스트필드, 확인, 취소버튼을 제공하는 prompt창
+			<input type="button" onclick="showPrompt()" value="확인"/>
+		</li>
+		
+	</ol>
+	
+	
+</body>
+</html>
