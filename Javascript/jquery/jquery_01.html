@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_01</title>
+<!-- 서버가 가지고 있는 로컬파일을 이용한 jQuery LIB 설치(배포,deploy)-->
+<script type="text/javascript" src ="../resources/js/jquery-3.5.1.js"></script> <!-- 여기 사이 는 비워라 -->
+<!-- HTML파일 외부에서 .js파일을 가져오기 위해서 <script>태그를 사용할땐 innerHTML영역(여는태그, 닫는태그 사이)에 아무것도 작성하지 않아야한다 -->
+
+<!-- 로컬 자바스크립트 파일(js)파일 설치 -->
+<script type="text/javascript" src="../resources/js/test.js"></script>
+
+<!-- CDN을 이용한 jQuery LIB설치 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+	<!-- integrity : 무결성 , crossorigin : 안넣어도 된다 -->
+<script type="text/javascript">
+//test.js의 test()함수 호출
+test(); 
+//.js 파일 설치 이외에 작성될 자바스크립트 코드는  <script>태그를 따로 만들어서 작성한다
+//src 속성을 지정한<script>태그는 별도의 자바스크립트 코드가 들어가서는 안된다
+</script>
+</head>
+<body>
+	
+</body>
+</html>
