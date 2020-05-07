@@ -8,7 +8,9 @@
 
 	$(document).ready(function(){	
 		$("<p>").text("둘").insertBefore($("p")[1]); //$("p")[1] ==$("p").eq(1)
+		$("<p>둘</p>").insertBefore($("div p:nth-child(2)")); //위와 
 	});
+	
 
 </script>
 <!-- p태그를 1개 생성하고 "둘"로 내용물 작성 -->
