@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_10</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){	
+		$("<p>").text("둘").insertBefore($("p")[1]); //$("p")[1] ==$("p").eq(1)
+	});
+
+</script>
+<!-- p태그를 1개 생성하고 "둘"로 내용물 작성 -->
+<!-- insertBefore()사용하여 순서에 맞게 추가하기! -->
+</head>
+<body>
+	<div id="myDiv">
+		<p> 하나 </p>
+		<p> 셋 </p>
+		<p> 넷 </p>
+	
+	</div>
+</body>
+</html>
