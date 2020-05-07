@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_05</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		//전체  p태그에 테두리 씌우기
+		$("p").css("border","1px solid #ccc");
+		
+		//전체 p태그에서 하나씩 지목하며 배경색 적용하기 
+		$("p").each(function(){
+						
+			// 반복객체와 #stop 객체 비교
+			console.log($(this).is($("#stop"))); //false , true, false 반복
+			if($(this).is($("#stop"))){
+				return false; //function을 종료하면서 false를 반환(출력x) -> 즉 each 함수중단코드 (전체 종료), false, true 반환 
+				//return 만 실행시 해당 i번째 반복문만 종료한다 = continue기능
+				//return false = break; 기능
+			}
+			$(this).css("background","tomato");
+		});
+		
+		
+		//--------------------------------------------------------------
+		console.log($("div").find("#stop")); //$(객체).find(#stop); div의 태그 자손노드중에서 #stop을 찾아서 반환
+		
+		//div태그의 자손노드중에서 #stop
+		console.log($("div #stop"));
+		
+		//---------------------------------------------------------------
+		var $div = $("div");
+		
+		$div.find("#stop"); // = $("div #stop")과 같지만 변수로 만들어서 사용하려면 왼쪽과 같은 쪽이 편하다ㄴ
+	});
+
+</script>
+</head>
+<body>
+	<div>
+		<span>하나</span>
+		<p>둘</p>
+		<pre>셋</pre>
+		<p id="stop">넷</p>
+		<p>다섯</p>
+	</div>
+</body>
+</html>
