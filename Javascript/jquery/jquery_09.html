@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_09</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		//#myDiv의 jQuery DOM 객체 얻기
+		var $myDiv = $("#myDiv");
+			
+		//내용물이 바뀐다 <h1>삭제되구 <h3>추가 (변경)
+		$myDiv.html("<h3> HTML div </h3>"); 
+		
+		
+		//---------------------------------
+		
+		//innerHTML 내용물을 읽어서 변수에 저장하기
+		var h =$myDiv.html(); //문자열
+		console.log(h); //<h3> HTML div </h3>
+		
+		//변수에 새 Div 구문 텍스트 추가
+		h += "<div> insertNode </div>";
+		//적용은 안됬다 변수를 적용해줘야된다
+		
+		//최종 HTML텍스트를 #myDiv에 적용,반영
+		$myDiv.html(h);
+		
+		//----------------------------------
+		
+		//새로운 p태그 생성
+		var $p = $("<p>");
+		
+		//p태그 내부에 텍스트 추가하기
+		$p.text("새로만든 p태그입니다");
+		
+		//#myDiv에 새로만든 p태그 추가하기
+		$myDiv.append($p);
+		
+		//----------------------------------
+		// 둘다 그대로 쓰면 대체된다 (덮어씌우기)
+		 //HTML 태그 반영이 된다
+		$myDiv.html("<h1>HTML</h1>");
+		//<> 태그 무시하고 화면에 다 출력 (단순텍스트)
+		$myDiv.text("<h1>text</h1>"); 
+		
+		//----------------------------------
+		//  < - &lt; 
+		//	> - &gt;
+		$myDiv.html("&lt;h1&gt; HTML&lt;/h1&gt;"); //<>를 텍스트로 표시해보자  HTML코드에서
+		
+	});
+
+</script>
+</head>
+<body>
+	<div id= "myDiv">
+		<h1>jQuery 테스트</h1>
+		
+	</div>
+</body>
+</html>
