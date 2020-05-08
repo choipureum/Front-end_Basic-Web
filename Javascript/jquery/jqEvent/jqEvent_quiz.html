@@ -23,6 +23,12 @@ $(document).ready(function(){
 		
 		$("input[name~='msg']").val("");
 	});
+	$("input").keydown(function(key){
+      
+     	 if (key.keyCode == 13) {
+         $("#btnSend").click();
+         }
+   });
 		
 
 	
