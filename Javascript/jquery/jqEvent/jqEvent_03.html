@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqEvent_03</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#btnOk").on("click",function(){			
+		//이벤트리스터 함수에서 this를 사용하면 이벤트가 발생한 객체를 상징한다(여기서 #btnOk)
+		console.log(this);  //JS DOM(확인)
+		console.log($(this)); //jQuery DOM(확인)
+	});
+	
+	$("#btnAlert").on("click",function(e){
+		console.log(e);
+		
+		//------------------------
+		
+		//이벤트 객체는 target 프로퍼티를 가지고 있음
+		// -> target값은 이벤트가 발생한 객체
+		console.log(e.target); //this와 같다
+		
+		//------------------------
+		
+		//this = e.target
+		//누르면 버튼의 내용이 바뀜
+		$(this).html("<h1 style='color:red';>Clicked</h1>");
+		
+		
+		//-----------------------------
+		
+		//#btnAlert를 클릭하면 #btnOk도 자동으로 클릭된 것으로 처리됨
+		$("#btnOk").click();
+		$("#btnOk").trigger("click");
+	});
+	
+	
+	
+});
+
+
+</script>
+</head>
+<body>
+	<div>
+		<button id="btnOk">확인</button>		
+		<button id="btnAlert">알림</button>
+	</div>
+</body>
+</html>
