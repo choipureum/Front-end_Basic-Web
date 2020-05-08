@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqEvent_04</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+//전송버튼을 클릭하면 입력된 메세지를 alert()한다!
+
+//메세지입력창에 엔터키를 누르면 #btnSend에 클릭이벤트를 발생시킨다
+
+$(document).ready(function(){	
+	
+	//최초 키보드 입력위치 조절
+	$("input[name!='msg']").focus(); //포커스 이벤트 발생시키기
+	
+	//전송버튼 클릭시 이벤트리스너
+	$("#btnSend").on("click",function(){
+		alert("입력메세지 : "+ $("input[name~='msg']").val());		
+		
+		// input태그의 value값을 "" (빈문자열)로 채우기
+		//->내용지우기
+		
+		$("input[name~='msg']").val("");
+	});
+		
+
+	
+	
+});
+
+
+
+</script>
+</head>
+<body>
+
+	<div>
+		<input type="text" name="msg" />
+		<button id="btnSend">전송</button>	
+	</div>
+</body>
+</html>
