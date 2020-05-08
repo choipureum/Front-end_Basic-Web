@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqEvent_02</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+// 		$("#btnOk").on("click",sayHi);
+// 		$("#btnOk").on("mouseenter",red);
+// 		$("#btnOk").on("mouseleave",blue); //변수도 가능 //너무 중복이 많음 -> 한번에 바꾸기
+		
+		$("#btnOk").on({
+			"click":sayHi,
+			"mouseenter":red,
+			"mouseleave":blue
+		})
+		
+		//------------------------------
+		
+		//one()함수로 딱 한번 동작하도록 이벤트 리스너 등록하기(한번발동하고 발동안됨)
+		$("#btnAlert").one({
+			"click":sayHi,
+			"mouseenter":red,
+			"mouseleave":blue
+		})
+		
+		//--------------------------------
+		
+		//모든 버튼들의 click 이벤트 리스너 제거
+		$("button").off("click");
+		
+		//---------------------------------
+		
+		$("div > button#btnAlert").on("click",sayHi);
+	
+	
+	
+});
+
+function sayHi(){ console.log("Hi") ;}
+function red(){ $(this).css("color","red");}
+
+var blue = function(){$(this).css("color","blue");}
+
+</script>
+</head>
+<body>
+	<div>
+		<button id="btnOk">확인</button>
+		
+		<button id="btnAlert">알림</button>
+	</div>
+</body>
+</html>
