@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqEvent_01</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	//btnOk 버튼 생성 - DOM트리에 추가되지 않앗음
+	var $btnOk = $("<button id='btnOk'>확인</button>");
+	
+	//id를 적을때는 #을 꼭적어주기 - 만날 까먹음
+	$("#btnAlert").on("click",function(){	
+		console.log("HIHI");		
+		//<div> 태그의 첫번째 자식으로 btnOk 추가 - DOM 트리에 추가됨
+		$btnOk.prependTo($("div"));		
+		//이벤트 리스너 안에서 이벤트 등록하기는 하지마라(맹점이 있음)-바깥에서 정의해라
+		//	또적게되면 등록되는 코드가 중첩되서 처리된다 -> 한번의 이벤트에 여러번 콜백 함수가 호출됨
+	});	
+	
+	//#btnOk 요소에 click 이벤트 리스터 등록하기 - 동작안함
+	//근데 안됨 -> 순서가 클릭이전에 시행되기때문에 -> 어떻게 시행되게 바뀔까?
+// 	$("#btnOk").on("click",function(){
+// 		console.log("okokok");		
+// 	});
+	//이벤트 리스터와 요소노드가 bind되는 시점에 #btnOk 요소가 DOM트리에 존재하지 않는다
+
+	//존재하지 않는 객체를 찾아서 출력하면
+	//n.fn.init 이라고 출력되지만 내용물이 비어있다 (Object(0))
+	
+	// ---------------------------------------------------------------------
+	// 따라서 동적(Dynamic) 으로 추가되는(생성되는) 요소에는 이벤트 리스너를 바로 등록할 수 없다
+	//	-> 이벤트 리스너를 등록하는 시점에는 존재하지 않아서
+	
+	//해결법 : 동적으로 이벤트 리스너를 동적으로 바인딩한다
+	//이벤트가 bind되는 시점에 존재하는 부모 요소에 이벤트를 등록
+	// 동적으로 추가될 위치에 이벤트리스너를 등록해둔다
+	
+	//on()함수의 두번째 인자로 선택자를 입력할 수 있다
+	//	이벤트가 동작하는 범위를 조절할 수 있다
+	//div #btnOk 걸어주는 것과 같음
+	$("div").on("click","#btnOk",function(){
+		//이벤트리스너를 div태그에 적용한다
+		//	이벤트에 대한 반응은 "div #btnOk"에서 처리된다
+		console.log("okokok");
+		
+		//#btnAlert의 click 이벤트 리스너 제거
+		$("#btnAlert").off("click");
+		//#btnAlert의 모든 이벤트리스너 제거
+		$("#btnAlert").off();
+	});
+	
+	$("#btnCancel").on("click",function(){
+		//$("#btnOk").off() --> 제거되지 않음
+		$("div").off("click"); //->>제거됨 (위에 div로 함수를 줫기 때문에 div로 꺼야됨) ->하지만 div태그에 걸려잇는 모든 click제거됨
+		$("div").off("click","#btnOk"); //-> 세분화해서 제거가능
+	})
+	
+	
+	
+});
+
+
+
+</script>
+</head>
+<body>
+	<div>
+		<button id="btnAlert">알림</button>
+		
+		<button id="btnCancel">확인 이벤트 제거</button>
+	</div>
+</body>
+</html>
