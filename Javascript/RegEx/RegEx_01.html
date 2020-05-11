@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RegEx_01</title>
+<script type="text/javascript">
+
+var name = "Choi Pureum" //단순 문자열
+var name2 = "Alice a Dana" 
+
+var regex = /Choi/; //정규식 리터럴
+
+//정규식.test("문자열")  ->함수사용가능
+//	Boolean을 반환
+//	true- 정규식 패턴이 문자열에 포함되어있을때
+//	flase -그렇지 않을때
+
+console.log(regex.test(name)); //true
+console.log(regex.test(name2)); //false
+
+//----------------------------------------
+
+//정규식.exec("문자열")
+//	배열 - 정규식 패턴으로 찾은 문자열
+//	null - 찾는패턴이 없을 때
+console.log(regex.exec(name)); //배열로 반환 index로 찾아줌
+console.log(regex.exec(name2)); //null
+
+//"문자열".match(정규식)
+//	배열-정규식 패턴으로 찾은 문자열
+//	null -찾는패턴이 없을때
+console.log(regex.match(/a/));  //기본매칭, 처음꺼 매칭
+console.log(regex.match(/a/g));  //g 전역검색, 전부다매칭
+console.log(regex.match(/a/i)); //i 대소문자 구분없이 매칭
+console.log(regex.match(/a/gi)); //gi 대소문자구분없이 전부 매칭
+
+// g 옵션(flag)을 많이 사용한다
+</script>
+</head>
+<body>
+	
+</body>
+</html>
