@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RegEx_02</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+	$("#uid").on("blur",function(){
+		console.log("포커스벗어남");
+		
+		//어떤 글자든 8~12개가 포함되면됨
+		var regEx = /.{8,12}/; //잘못됨
+		//8~12를 무조건 만족해야됨(^, $로 앞뒤를 꾸며준다)
+		var regEx2 = /^.{8,12}$/;		
+		//알파벳,숫자 , _(밑줄)8~12글자
+		var regEx3 =/^[a-zA-Z0-9_]{8,12}$/;
+		
+		//숫자로 시작하면 안되고 알파벳 대소문자, 숫자로 4~8글자사이 
+		var regEx4 =  /^[A-Za-z][A-Za-z\d]{3,7}$/;	
+		
+		//맞지않으면 alert출력되게(12개 넘어도 가능하다) ->8~12개가 존재만 하면 된다
+		if(!regEx4.test($(this).val())){
+			alert("정규식 표현에 맞지않습니다");
+		}
+	});
+	
+	//== $("#uid").blur(function(){		
+	//});
+});
+
+</script>
+
+</head>
+<body>
+	<input type="text" name="uid" id="uid"/>
+</body>
+</html>
