@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RegEx_03</title>
+<style type="text/css">
+input, span{
+	line-height:1.5em;
+}
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+//이름은 한글로 두글자 이상
+//아이디는 6글자 이상, 첫문자는 대문자만 가능, 영문자, 숫자구성
+//패스워드는 8글자이상, 영문자,숫자로만 구성
+
+//각 요소가 포커스를 잃을  때 검증
+//조건에 만족하지 못하면 각 요소 바로 밑에 경고 문구 출력(글자색 빨강)
+//#uname -한글만 가능합니다(2자 이상)
+//#uid -영어, 숫자만 가능합니다(6자이상)
+//#upw -8자 이상 작성하세요
+
+$(document).ready(function(){
+	//초기 포커스 설정
+	$("#uname").focus();
+	var $insert =$("<span>");
+	$insert.css("color","red");
+	
+	//이름 검증
+	//change ->input에서는 엔터 눌렀을시 발생
+	// keyup도 가능(한글자씩마다)
+	$("#uname").blur(function(){
+		
+		var regEx =/^[가-힣]{2,}$/;
+		
+		if(!regEx.test($(this).val())){
+			$insert.html("<br>한글만 입력가능합니다(2자이상)");			
+			$("#uname").val(""); //비우기			
+			$($insert).insertAfter("div #uname");					
+		}
+		else{		
+			$insert.remove();
+			var $ok=$("<br><span>올바른 값입니다</span>");
+			$($ok).attr("style","color:green")
+			$($ok).insertAfter("div #uname");	
+			//맞으면 굳게 하기
+			$(this).attr("disabled","disabled");
+		}
+	});
+	
+	//아이디 검증
+	$("#uid").blur(function(){
+		$insert.html("<br>영어, 숫자만 가능합니다(6자이상)");		
+		var regEx =/^[A-Z][a-zA-Z0-9]{5,}$/;
+		
+		if(!regEx.test($(this).val())){
+			$("#uid").val(""); //비우기					
+			$($insert).insertAfter("div #uid");		
+		}		
+		else{	
+			$insert.remove();
+			//$insert.html("")도 가능
+			var $ok=$("<br><span>올바른 값입니다</span>");
+			$($ok).attr("style","color:green");
+			$($ok).insertAfter("div #uid");	
+			//맞으면 굳게 하기
+			$(this).attr("disabled","disabled");
+		}
+	});
+		//패스워드 검증
+		$("#upw").blur(function(){
+			$insert.html("<br>8자 이상 작성하세요");				
+			var regEx =/^[a-zA-Z0-9]{8,}$/;
+			
+			if(!regEx.test($(this).val())){
+				$("#upw").val(""); //비우기						
+				$($insert).insertAfter("#upw");			
+			}
+			else{	
+				$insert.remove();
+				var $ok=$("<br><span>올바른 값입니다</span>");
+				$($ok).attr("style","color:green")
+				$($ok).insertAfter("div #upw");	
+				$(this).attr("disabled","disabled");
+			}
+	});
+			
+});
+
+</script>
+</head>
+<body>
+	<div>
+		이름:<input type="text" name="uname" id="uname"><br><br>
+		아이디:<input type="text" name="uid" id="uid"><br><br>
+		패스워드:<input type="password" name="upw" id="upw"><br><br>		
+	</div>
+</body>
+</html>
