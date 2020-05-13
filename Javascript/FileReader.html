@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fileReader</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+//파일 선택시 미리 웹화면에 보여주는 기능
+
+$(document).ready(function(){
+	//파일 선택이벤트
+	$("#upload2").change(function(e){
+//		console.log(e);
+		
+		// 선택한 파일들 변수
+		var files=e.target.files; //FileList 객체
+		
+		console.log(files); //file 배열 반환
+		console.log(files[0]); //file배열의 1번째 반환 -> 다시 선택해도 1개짜리 배열, [0]
+		
+		//만약에 파일이 image를 포함하지않는다면(예외처리)
+		if(!files[0].type.includes("image")){
+			alert("이미지가 아닙니다");
+			e.target.value=null; //비우기
+			return false;
+		}
+		//** File 객체에는 파일의 정보가 들어있긴 하지만
+		//해당 파일의 내용물(컨텐츠) 정보는 없다
+		//	->FileReader 객체를 이용해 읽어들여야한다
+		
+		var reader = new FileReader();
+		
+		//File 객체의 정보(내용물)을 모두 읽어서 메모리에 적재(load)한 이후 동작되도록 이벤트 리스너 작성
+		// onload는 reader.readAsText위에 작성한다
+		reader.onload = function(ev){
+			console.log(ev);
+			console.log(ev.target);
+			
+			console.log(ev.target.result); //이미지 경로가 console.log 나옴	
+			
+			//appendTo를 하면 이미지가 추가됨 - 좋지 않음
+			//$("<img>").attr("src",ev.target.result).appendTo($("#preview"));
+			
+			$("#preview").html($("<img>").attr({
+						"src":ev.target.result,
+						"width":400,
+						"height":300						
+			}));
+		}
+		
+		//FileReader 객체를 이용한 File 객체 정보 읽기
+		//reader.readAsText(files[0]); 텍스트형식으로 읽기
+		reader.readAsDataURL(files[0]); //BLOB, File 형식으로 읽기
+	
+		
+	});
+});
+
+</script>
+</head>
+<body>
+	<input type="file" id="upload"><br><br>
+	<!--multiple을 사용해주면 파일을 여러개 선택가능(다중 파일 선택) 파일 몇개 -->
+	<input type="file" id="upload2" multiple ="multiple">
+	<div id="preview"></div>
+</body>
+</html>
