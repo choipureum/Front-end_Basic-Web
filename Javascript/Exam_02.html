@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" lang="ko">
+<title>회원가입</title>
+<!-- CDN연결 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!--자바스크립트 구현시작 -->
+<script type="text/javascript">
+$(document).ready(function(){	
+	
+	//제출시 실행코드
+	$("#enrollform").submit(function(){
+		//userid 정규표현식
+		var reg = /^[a-z0-9]{8,12}$/;
+		//아이디 다를시
+		if(reg.test($("#userid").val())){
+			alert("영문자와 숫자로 8글자 이상 12글자 이하여야 합니다.");
+			//제출안되게 막기
+			return false;
+		}
+		
+		// 비밀번호 다를시
+		if(reg.test($("#userpw").val())){
+			alert("암호는 영문자와 숫자로 8글자이상 12글자 이하로 입력하세요");
+			//제출안되게 막기
+			return false;
+		}
+		if($("#userpw").val()!=$("#pwdcheck").val()){
+			alert("비밀번호가 다릅니다!");
+			//제출안되게 막기
+			return false;
+		}
+		//제출
+		return true;
+	});
+	
+	//textarea 나타내기
+	$("#replybtn").click(function(){
+		$("#reply").toggle();
+	});
+	
+});
+
+
+</script>
+</head>
+<body>
+	<!-- 관심분야 데이터 리스트 -->
+	<datalist id="myinter">
+			<option value="java">java</option>
+			<option value="html/css">html/css</option>
+			<option value="javascript/jquery">javascript/jquery</option></datalist>
+		
+				
+	<!-- 본격적 입력 form 태그 -->
+	<form action="./memberenroll" method="post" id="enrollform" >
+		<ul>
+			<li>아이디: <input type="text" id="userid" name="userid"></li>
+			<li>패스워드: <input type="password" id="userpw" name="userpw"></li>
+			<li>패스워드확인: <input type="password" id="pwdcheck" name="pwdcheck"></li>				
+			<li>관심분야(java, html/css, javascript/jquery, 데이터베이스 중 다수값이면 ,로 구분하여 작성	)<br>
+			 	<input list="myinter" id="interests"name="interests" placeholder="java, html/css, javascript/jquery, 데이터베이스 중 다수값이면 ,로 구분"></li>
+			<li>이메일: <input type="email" id="email" name="email"></li>
+			<li>지식정도: <select id="info">
+							<option value="상">상</option>
+							<option value="중">중</option>
+							<option value="하">하</option>
+						</select>			
+			</li>
+			<li>레벨: <select id="level">
+							<option value="고수">고수</option>
+							<option value="중수">중수</option>
+							<option value="하수">하수</option>
+						</select>			
+			</li>
+			<li>레벨: <select id="tele">
+							<option value="010">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="019">019</option>
+						</select> - <input type="text" size="4"> -<input type="text" size="4">									
+			</li>										
+			
+			<!-- 제출 -->
+			<li><input type="submit" id="submit" value="회원가입"> &nbsp; &nbsp;<button value="취소" id="cancel">취소</button></li>					
+		</ul>		
+			<button value="댓글등록" id="replybtn">댓글등록</button>
+			<textarea id="reply" rows="5" cols="5" style="display:none"></textarea>
+	</form>
+	
+</body>
+</html>
