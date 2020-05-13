@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table</title>
+<style type="text/css">
+/*테이블 서식지정*/
+table,tr,td{
+   border-collapse: separate;
+   border-spacing: 2;
+   border : 1px solid black;
+}
+
+</style>
+<!-- CDN연결 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!--자바스크립트 구현시작 -->
+<script type="text/javascript">
+$(document).ready(function(){   
+   
+   //tr1 클릭시 함수
+   $("tbody>#tr1").click(function(){      
+      $(this).attr("style","background:red;color:white");
+      
+      
+      //입력해주기(q반복문써야되는데에에)   
+      
+   });
+   //tr2 클릭시 함수
+   $("tbody>#tr2").click(function(){      
+      $(this).attr("style","background:red;color:white");
+      
+      //입력해주기      
+      
+   });
+   //tr3 클릭시 함수
+   $("tbody>#tr3").click(function(){      
+      $(this).attr("style","background:red;color:white");
+      
+      //입력해주기      
+      
+   });
+   
+});
+</script>
+</head>
+<body>
+   <!-- 테이블 구성하기 -->
+   <table>
+      <!-- 1행 -->
+      <thead>
+         <tr style="text-align:center">
+            <td><b>번호</b></td>
+            <td><b>제목</b></td>   
+            <td><b>조회수</b></td>   
+            <td><b>작성일자</b></td>            
+         </tr>
+      </thead>
+      <tbody>
+         <tr id="tr1">
+            <td>3</td>
+            <td>3번제목</td>
+            <td>0</td>
+            <td>11-07-13</td>   
+         </tr>
+         <tr id="tr2">
+            <td>2</td>
+            <td>2번제목</td>
+            <td>0</td>
+            <td>11-07-12</td>   
+         </tr>
+         <tr id="tr3">
+            <td>1</td>
+            <td>1번제목</td>
+            <td>0</td>
+            <td>11-07-11</td>   
+         </tr>            
+      </tbody>   
+   </table>
+   <!-- span  영역 -->
+   선택된 행: <span id="s1"></span> / <span id="s2"></span> /<span id="s3"></span> /<span id="s4"></span> 
+
+</body>
+</html>
